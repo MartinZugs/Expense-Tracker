@@ -31,10 +31,15 @@ img{
   background-color: #FFFFFF;
   grid-area: header;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: center;
+  padding-right: 200px;
 
 
+}
+/*adding shadow to nav sing in button*/
+.header button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .sidebar {
@@ -51,6 +56,10 @@ img{
 }
 .sidebar h3{
   color: #808080;
+}
+
+.sidebar button {
+  margin-top: 50px;
 }
 
 .content {

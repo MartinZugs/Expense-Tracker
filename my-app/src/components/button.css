@@ -31,6 +31,18 @@
     borderline: var(--purple);
 
 }
+.btn--primary--solid {
+    background-color: var(--purple);
+    color: var(--primary);
+    border: 1px solid;
+    borderline: none;
+
+}
+.btn--primary--solid:hover{
+    background-color: var(--primary);
+    color: var(--purple);
+
+}
 
 /* Button Sizes */
 
@@ -39,7 +51,7 @@
     font-size: 20px;
     padding: 10px;
 }
-.btn--medium {
-    font-size: 25px;
-    padding: 15px;
+.btn--large {
+    font-size: 30px;
+    padding: 20px;
 }

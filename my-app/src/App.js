@@ -16,7 +16,7 @@ function App() {
               type = "button"
               buttonStyle="btn-primary-outline"
               buttonSize="btn--small"
-          >Sign In</Button>
+          >Sign in</Button>
         </div>
         <div className="sidebar">
           <h1>
@@ -25,6 +25,11 @@ function App() {
           <h3>
             We make it easy for you to stay on top of your bills and know where your money goes.
           </h3>
+            <Button onClick={() => {console.log("You Clicked on Me!") }}
+                    type = "button"
+                    buttonStyle="btn--primary--solid"
+                    buttonSize="btn--large"
+            >Sign up</Button>
         </div>
         <div className="content"></div>
         <div className="footer"></div>
