@@ -23,6 +23,8 @@
   align-items: center;
 
 }
+
+
 img{
   height: 80%;
 }
@@ -76,4 +78,8 @@ img{
   background-color: #FBFCFC;
   grid-area: footer;
 
+}
+/*styling for links*/
+a:link, a:visited, a:hover{
+  text-decoration: none;
 }
