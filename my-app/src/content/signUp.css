@@ -1,0 +1,15 @@
+.formContainer {
+
+
+    display: flex;
+    margin: 15% 50% 15% 10%;
+    padding: 50px;
+    background: #FFFFFF;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.text-container{
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+

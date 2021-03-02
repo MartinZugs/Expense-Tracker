@@ -4,12 +4,13 @@ import Button from "./Button";
 import {HashRouter, Route} from "react-router-dom";
 import { Link } from "react-router-dom";
 import SignUp from "../content/SignUp";
+
 class Home extends Component {
     render() {
         return (
             <HashRouter>
                <div className="container">
-                   <Link exact to="/"> <div className="logo">
+                   <Link exact={"true"} to="/"> <div className="logo">
                         <img src={logo} alt="Logo" />
                         <div className="businessName">Tracker</div>
                    </div></Link>
@@ -35,7 +36,6 @@ class Home extends Component {
                         >Sign up</Button></Link>
                     </div>
                     <div className="content">
-
                         <Route path="/signUp" component={SignUp}/>
                     </div>
                     <div className="footer"></div>
