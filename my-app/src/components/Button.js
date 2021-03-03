@@ -3,13 +3,7 @@ import "./button.css";
 
 const STYLES = [
     "btn--primary--outline",
-    "btn--warning--outline",
-    "btn--danger--outline",
-    "btn--success--outline",
-    "btn--primary--solid",
-    "btn--warning--solid",
-    "btn--danger--solid",
-    "btn--success--solid",
+    "btn--primary--solid"
 ]
 const SIZES = [
     "btn--small",

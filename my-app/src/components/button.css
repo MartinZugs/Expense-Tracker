@@ -17,7 +17,7 @@
 }
 
 .btn:hover {
-    transform: translateY(-3);
+
     background-color: var(--purple);
     color: white;
 }
