@@ -1,7 +1,8 @@
 .formContainer {
-    
+
     display: flex;
-    margin: 15% 50% 15% 10%;
+    flex-direction: column;
+    margin: 10% 50% 15% 10%;
     padding: 50px;
     background: #FFFFFF;
     text-align: center;
@@ -9,6 +10,18 @@
 }
 .text-container{
     font-family: "Roboto", sans-serif;
-    font-size: 14px;
+    font-size: 20px;
+
+}
+.form-input {
+  margin: 15px;
+
+}
+.input-field{
+    box-sizing: border-box;
+    border: 1px solid lightgray;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 25px;
 }
 
