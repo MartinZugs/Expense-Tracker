@@ -29,7 +29,10 @@
   grid-area: footer;
 
 }
-/*styling for links*/
-a:link, a:visited, a:hover{
+a:link, a:visited, a:hover, a:active, a:focus{
   text-decoration: none;
+
+}
+* {
+  outline: none;
 }
