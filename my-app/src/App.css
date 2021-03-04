@@ -11,58 +11,9 @@
 
 }
 
-.logo {
-  background-color: #FFFFFF;
-  grid-area: logo;
-  padding: 5px;
-  display: flex;
-  flex-direction: row;
-  font-size: 30px;
-  color: #006600;
-  justify-content: center;
-  align-items: center;
-
-}
 
 
-img{
-  height: 80%;
-}
 
-.header-navbar {
-  background-color: #FFFFFF;
-  grid-area: header;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 200px;
-
-
-}
-/*adding shadow to nav sing in button*/
-.header-navbar button {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  padding-top: 90px;
-  padding-right: 40px;
-  padding-left: 40px;
-  align-items: center;
-  background-color: #FFFFFF;
-  color: #4F4F4F;
-  box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4);
-  grid-area: nav;
-}
-.sidebar h3{
-  color: #808080;
-}
-
-.sidebar button {
-  margin-top: 50px;
-}
 
 .content {
   box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4);
