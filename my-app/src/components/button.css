@@ -46,7 +46,6 @@
     color: var(--gray);
     border: 1px solid var(--gray);
     border-radius: 25px;
-    borderline: none;
     margin: 10px;
 
 
@@ -56,6 +55,12 @@
     background-color: var(--primary);
     color: var(--purple);
 
+}
+
+.btn--primary--form:hover {
+    background-color: var(--primary);
+    color: var(--purple);
+    border-color: var(--purple);
 }
 
 /* Button Sizes */
