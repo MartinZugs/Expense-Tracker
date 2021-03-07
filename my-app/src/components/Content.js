@@ -2,13 +2,13 @@ import "./content.css";
 import {Link, Route} from "react-router-dom";
 import SignUp from "../content/SignUp";
 import React from "react";
-import Login from "../content/Login"
+import SignIn from "../content/SignIn";
 
 function Content() {
     return(
         <div className="content">
             <Route path="/signUp" component={SignUp}/>
-            <Route path="/Login" component={Login}/>
+            <Route path="/signIn" component={SignIn}/>
         </div>
     )
 }

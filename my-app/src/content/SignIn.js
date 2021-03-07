@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./signUp.css"
+import "./signIn.css"
 
 
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
@@ -20,7 +20,7 @@ const validateForm = (errors) => {
     return valid;
 }
 
-class Login extends Component {
+class SignIn extends Component {
 
 
     constructor(props) {
@@ -102,4 +102,4 @@ class Login extends Component {
         )
     }
 }
-export default Login
+export default SignIn

@@ -7,7 +7,7 @@ function NavHeader() {
 
     return (
         <div className="header-navbar">
-            <Link to ="/Login"><Button
+            <Link to ="/signIn"><Button
                 type = "button"
                 buttonStyle="btn-primary-outline"
                 buttonSize="btn--small"

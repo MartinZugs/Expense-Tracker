@@ -1,4 +1,4 @@
-.formContainer{
+.formContainer {
 
     display: flex;
     flex-direction:column;
@@ -11,7 +11,6 @@
     width: 30%;
 }
 .text-container{
-
     font-family: "Roboto", sans-serif;
     font-size: 15px;
     padding: 10% 15% 10% 15%;
@@ -19,8 +18,7 @@
 
 }
 .form-input {
-  margin: 15px;
-
+    margin: 15px;
 
 }
 .input-field{
@@ -33,10 +31,7 @@
     max-width: none !important;
 
 }
-
 .error{
     color: purple;
     font-size: 10px;
 }
-
-
