@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./signUp.css"
+import fire from "../Firebase";
 
 
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
@@ -8,7 +9,6 @@ const validateForm = (errors) => {
     Object.values(errors).forEach(
         (val) => val.length > 0 && (valid = false)
     );
-
     const a = document.getElementsByName("firstName")[0].value
     const b = document.getElementsByName("lastName")[0].value
     const c = document.getElementsByName("email")[0].value
@@ -17,20 +17,21 @@ const validateForm = (errors) => {
 
     if ((a == null || a === "")|| (b == null || b === "")|| (c == null || c === "")|| (d == null || d === "")|| (e == null || e === "")) {
         return false;
-}
+    }
     return valid;
 }
-
 class SignUp extends Component {
 
 
     constructor(props) {
         super(props);
+        this.handleChange = this.handleChange.bind(this);
+        this.signup=this.signup.bind(this);
         this.state = {
             firstName: null,
             lastName: null,
-            email: null,
-            password: null,
+            email: "",
+            password: "",
             password2: null,
             errors: {
                 firstName: '',
@@ -49,6 +50,7 @@ class SignUp extends Component {
             alert('Invalid Form')
         }
     }
+
     handleChange = (event) => {
         event.preventDefault();
         const { name, value } = event.target;
@@ -92,6 +94,20 @@ class SignUp extends Component {
         this.setState({errors, [name]: value});
     }
 
+    signup(e) {
+        e.preventDefault();
+        fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
+            console.log(u)
+        }).catch((err) => {
+            console.log(err);
+        })
+    }
+    handleChange(e){
+        this.state({
+            [e.target.name] : e.target.value
+        })
+    }
+
 
     render() {
         const {errors} = this.state;
@@ -113,13 +129,13 @@ class SignUp extends Component {
                         </div>
 
                         <div className="form-input">
-                            <input className="input-field"  type="email" placeholder="email address" name="email" onChange={this.handleChange} required/>
+                            <input id="email" value={this.state.email} className="input-field"  type="email" placeholder="email address" name="email" onChange={this.handleChange} required/>
                             {errors.email.length > 0 && <span className='error'>{errors.email}</span>}
                         </div>
 
                         <div className="form-input">
 
-                            <input className="input-field" type="password" placeholder="password" name="password" onChange={this.handleChange} required/>
+                            <input id="password" value={this.state.password} className="input-field" type="password" placeholder="password" name="password" onChange={this.handleChange} required/>
                             {errors.password.length > 0 && <span className='error'>{errors.password}</span>}
                         </div>
                         <div className="form-input">
@@ -127,7 +143,7 @@ class SignUp extends Component {
                             {errors.password2.length > 0 && <span className='error'>{errors.password2}</span>}
                         </div>
 
-                        <button className="btn--primary--form btn--small" type="submit">Create Account</button>
+                        <button  onClick={this.signup} className="btn--primary--form btn--small" type="submit">Create Account</button>
                         <p className="message">Already registered? <a href="#">Sign In</a></p>
 
                     </div>
