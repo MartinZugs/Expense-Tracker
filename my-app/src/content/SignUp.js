@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./signUp.css"
 import fire from "../Firebase";
+import {Link} from "react-router-dom";
 
 
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
@@ -144,7 +145,7 @@ class SignUp extends Component {
                         </div>
 
                         <button  onClick={this.signup} className="btn--primary--form btn--small" type="submit">Create Account</button>
-                        <p className="message">Already registered? <a href="#">Sign In</a></p>
+                        <p className="message">Already registered? <Link to="/SignIn">Sign In</Link></p>
 
                     </div>
                 </form>

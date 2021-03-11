@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import "./signIn.css"
 import fire from "../Firebase";
-
-
-
-
+import {Link} from "react-router-dom";
 
 class SignIn extends Component {
 

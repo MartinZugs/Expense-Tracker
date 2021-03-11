@@ -14,7 +14,7 @@ class LoggedInPage extends Component {
 
         return (
 
-            <div ><h1>You have an account!</h1></div>
+            <div ><h1>You are signed in!</h1></div>
         );
     }
 }

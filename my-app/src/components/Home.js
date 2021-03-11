@@ -18,11 +18,13 @@ class Home extends Component {
             user: {}
         }
     }
+logout(){
+        fire.auth().signOut();
+}
 
     componentDidMount() {
         this.authListener();
     }
-
     componentWillUnmount() {
         // fix Warning: Can't perform a React state update on an unmounted component
         this.setState = (state, callback) => {
@@ -48,8 +50,10 @@ class Home extends Component {
 
         <HashRouter>
             <div>
-                {this.state.user ? (<LoggedInPage/>) : (<h1 style={{color: "red"}}>You do not have an account!</h1>)}
+                {this.state.user ? (<LoggedInPage/>) : (<h1 style={{color: "red"}}>You are not signed in!</h1>)}
+
             </div>
+            <button onClick={this.logout}>Sign out</button>
             <div className="container">
 
                 <LogoHeader />
