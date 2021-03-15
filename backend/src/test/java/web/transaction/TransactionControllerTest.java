@@ -1,4 +1,4 @@
-package web;
+package web.transaction;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,19 +11,19 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@WebMvcTest(ExpenseController.class)
-class ExpenseControllerTest {
+@WebMvcTest(TransactionController.class)
+class TransactionControllerTest {
 
     /* ----- Unit tests ----- */
 
-    Expense exp1 = new Expense();
-    Expense exo2 = new Expense();
+    Transaction trans1 = new Transaction();
+    Transaction trans2 = new Transaction();
 
     @Test
-    void createExpenseTest() {
-        ExpenseController controller = new ExpenseController();
-        boolean response = controller.createExpense();
-        assertTrue(response);
+    void createTransactionTest() {
+        TransactionController controller = new TransactionController();
+        Transaction response = controller.createTransaction(trans1, 1);
+        assertEquals(response, trans1);
     }
 
     /* ----- Integration tests ----- */
