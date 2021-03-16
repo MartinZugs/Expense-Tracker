@@ -3,6 +3,8 @@ import fire from "../Firebase";
 import {HashRouter, useHistory} from "react-router-dom";
 import {AuthProvider, useAuth} from "../contexts/AuthContext";
 import "./SignIn"
+import "./signUp.css"
+
 import PrivateRoute from "../components/PrivateRoute";
 
 
@@ -34,7 +36,7 @@ const history = useHistory()
                 <div><h1>You are signed in!</h1>
                     {error && <span>{error}</span>}
 
-                <button onClick={handleLogout}>Sign out</button>
+                <button onClick={handleLogout} className="btn--primary--form btn--small">Sign out</button>
 
             </div>
         </HashRouter>

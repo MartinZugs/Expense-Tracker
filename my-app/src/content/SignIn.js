@@ -34,7 +34,7 @@ export default function SignIn(props) {
                     {error && <span className='error'>{error}</span>}
 
                     <div className="text-container">
-
+                        <h1>Sign In</h1>
                         <div className="form-input">
                             <input id="email" className="input-field" ref={emailRef} type="email" placeholder="email address" name="email" required/>
 
