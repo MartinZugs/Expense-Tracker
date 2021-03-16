@@ -33,7 +33,7 @@ export default function Signup(props) {
 
 return (
 
-    <div className="formContainer">
+    <div className="formContainerSignUp">
         {error && <span className='error'>{error}</span>}
         <form className="sign-up_form" onSubmit={handleSubmit} noValidate>
             <div className="text-container">

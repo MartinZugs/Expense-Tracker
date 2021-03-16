@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import "./signUp.css"
+import "./signIn.css"
 import {Link, useHistory} from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -29,7 +29,7 @@ export default function SignIn(props) {
 
         return (
 
-            <div className="formContainer">
+            <div className="formContainerSignIn">
                 <form className="sign-up_form" onSubmit={handleSubmit} noValidate>
                     {error && <span className='error'>{error}</span>}
 
