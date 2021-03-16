@@ -3,12 +3,11 @@ import ReactDOM from "react-dom";
 import './App.css';
 import {
     BrowserRouter as Router, HashRouter,
-    Route,
+    Route, Switch
 } from "react-router-dom";
 import Home from "./components/Home";
-import fire from "./Firebase";
-import LoggedInPage from "./content/LoggedInPage";
-import SignIn from "./content/SignIn";
+import {AuthProvider} from "./contexts/AuthContext";
+import Signup from "./content/SignUp";
 
 
 class App extends Component {
@@ -17,18 +16,20 @@ class App extends Component {
     render() {
 
         return (
-
             <Router>
-                <Route exact path="/">
-                    <Home/>
+                <AuthProvider>
+                    <Switch>
+                        <Route exact path="/">
+                            <Home/>
+                        </Route>
+                    </Switch>
 
-                </Route>
+                </AuthProvider>
 
             </Router>
         );
     }
 }
-
 
 export default App;
 const rootElement = document.getElementById("root");

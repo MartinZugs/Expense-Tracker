@@ -1,21 +1,43 @@
-import {HashRouter} from "react-router-dom";
-import LogoHeader from "../components/LogoHeader";
-import NavHeader from "../components/NavHeader";
-import Aside from "../components/Aside";
-import Content from "../components/Content";
-import Footer from "../components/Footer";
-import React, { Component } from 'react';
-import SignIn from "./SignIn";
+import React, { useState } from "react"
 import fire from "../Firebase";
+import {HashRouter, useHistory} from "react-router-dom";
+import {AuthProvider, useAuth} from "../contexts/AuthContext";
+import "./SignIn"
+import PrivateRoute from "../components/PrivateRoute";
 
-class LoggedInPage extends Component {
 
-    render() {
+export default function LoggedInPage() {
+const [error, setError] = useState("")
+const { currentUser, logout } = useAuth()
+const history = useHistory()
+    async function handleLogout(){
+    setError('')
 
-        return (
+        try {
 
-            <div ><h1>You are signed in!</h1></div>
-        );
+            await logout()
+            history.push('/SignIn')
+        } catch {
+        setError('Failed to log out!')
+        }
     }
+
+
+    return (
+
+
+        <HashRouter>
+            <div>
+
+
+            </div>
+                <div><h1>You are signed in!</h1>
+                    {error && <span>{error}</span>}
+
+                <button onClick={handleLogout}>Sign out</button>
+
+            </div>
+        </HashRouter>
+
+    )
 }
-export default LoggedInPage

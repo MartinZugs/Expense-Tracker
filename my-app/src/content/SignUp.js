@@ -1,157 +1,72 @@
-import React, { Component } from 'react';
+import React, { useRef, useState } from 'react';
 import "./signUp.css"
-import fire from "../Firebase";
 import {Link} from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
+export default function Signup(props) {
 
-const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
-const validateForm = (errors) => {
-    let valid = true;
-    Object.values(errors).forEach(
-        (val) => val.length > 0 && (valid = false)
-    );
-    const a = document.getElementsByName("firstName")[0].value
-    const b = document.getElementsByName("lastName")[0].value
-    const c = document.getElementsByName("email")[0].value
-    const d = document.getElementsByName("password")[0].value
-    const e = document.getElementsByName("password2")[0].value
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const passwordConfirmRef = useRef()
+    const { signup } = useAuth()
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
 
-    if ((a == null || a === "")|| (b == null || b === "")|| (c == null || c === "")|| (d == null || d === "")|| (e == null || e === "")) {
-        return false;
+    async function handleSubmit(e) {
+        e.preventDefault()
+
+    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+        return setError('Passwords do not match')
     }
-    return valid;
+
+    try {
+        setError('')
+        setLoading(true)
+        await signup(emailRef.current.value, passwordRef.current.value)
+    } catch {
+        setError('Failed to create an account')
+    }
+    setLoading(false)
 }
-class SignUp extends Component {
 
+return (
 
-    constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
-        this.signup=this.signup.bind(this);
-        this.state = {
-            firstName: null,
-            lastName: null,
-            email: "",
-            password: "",
-            password2: null,
-            errors: {
-                firstName: '',
-                lastName:'',
-                email: '',
-                password: '',
-                password2:''
-            }
-        };
-    }
-    handleSubmit = (event) => {
-        event.preventDefault();
-        if(validateForm(this.state.errors)) {
-            alert('Valid Form')
-        }else{
-            alert('Invalid Form')
-        }
-    }
+    <div className="formContainer">
+        {error && <span className='error'>{error}</span>}
+        <form className="sign-up_form" onSubmit={handleSubmit} noValidate>
+            <div className="text-container">
+                <div className="form-input">
+                    <input className="input-field" type="text" placeholder="first name" name="firstName"  required/>
 
-    handleChange = (event) => {
-        event.preventDefault();
-        const { name, value } = event.target;
-        let errors = this.state.errors;
+                </div>
 
-        switch (name) {
-            case 'firstName':
-                errors.firstName =
-                    value.length < 1
-                        ? 'A first name is required!'
-                        : '';
-                break;
-            case 'lastName':
-                errors.lastName =
-                    value.length < 1
-                        ? 'A last name is required!'
-                        : '';
-                break;
-            case 'email':
-                errors.email =
-                    validEmailRegex.test(value)
-                        ? ''
-                        : 'Email is not valid!';
-                break;
-            case 'password':
-                errors.password =
-                    value.length < 6
-                        ? 'Your password must be at least 6 characters long!'
-                        : '';
-                break;
-            case 'password2':
-                errors.password2 =
-                    value !== document.getElementsByName("password")[0].value
-                        ? 'Your passwords do not match!'
-                        : '';
-                break;
-            default:
-                break;
-        }
+                <div className="form-input">
+                    <input className="input-field" type="text" placeholder="last name" name="lastName" required/>
 
-        this.setState({errors, [name]: value});
-    }
+                </div>
 
-    signup(e) {
-        e.preventDefault();
-        fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
-            console.log(u)
-        }).catch((err) => {
-            console.log(err);
-        })
-    }
-    handleChange(e){
-        this.state({
-            [e.target.name] : e.target.value
-        })
-    }
+                <div className="form-input">
+                    <input id="email" className="input-field" ref={emailRef} type="email" placeholder="email address" name="email"  required/>
 
+                </div>
 
-    render() {
-        const {errors} = this.state;
-        return (
+                <div className="form-input">
 
-            <div className="formContainer">
+                    <input id="password" className="input-field" ref={passwordRef} type="password" placeholder="password" name="password"  required/>
 
-                <form className="sign-up_form" onSubmit={this.handleSubmit} noValidate>
-                    <div className="text-container">
-                        <div className="form-input">
-                            <input className="input-field" type="text" placeholder="first name" name="firstName" onChange={this.handleChange} required/>
-                            {errors.firstName.length > 0 &&
-                            <span className='error'>{errors.firstName}</span>}
-                        </div>
+                </div>
+                <div className="form-input">
+                    <input className="input-field" type="password"  ref={passwordConfirmRef} placeholder="confirm password" name="password2" required/>
 
-                        <div className="form-input">
-                            <input className="input-field" type="text" placeholder="last name" name="lastName" onChange={this.handleChange} required/>
-                            {errors.lastName.length > 0 && <span className='error'>{errors.lastName}</span>}
-                        </div>
+                </div>
 
-                        <div className="form-input">
-                            <input id="email" value={this.state.email} className="input-field"  type="email" placeholder="email address" name="email" onChange={this.handleChange} required/>
-                            {errors.email.length > 0 && <span className='error'>{errors.email}</span>}
-                        </div>
-
-                        <div className="form-input">
-
-                            <input id="password" value={this.state.password} className="input-field" type="password" placeholder="password" name="password" onChange={this.handleChange} required/>
-                            {errors.password.length > 0 && <span className='error'>{errors.password}</span>}
-                        </div>
-                        <div className="form-input">
-                            <input className="input-field" type="password" placeholder="confirm password" name="password2" onChange={this.handleChange} required/>
-                            {errors.password2.length > 0 && <span className='error'>{errors.password2}</span>}
-                        </div>
-
-                        <button  onClick={this.signup} className="btn--primary--form btn--small" type="submit">Create Account</button>
-                        <p className="message">Already registered? <Link to="/SignIn">Sign In</Link></p>
-
-                    </div>
-                </form>
+                <button disabled={loading} type="submit" className="btn--primary--form btn--small" >Create Account</button>
+                <p className="message">Already registered? <Link to="/SignIn">Sign In</Link></p>
 
             </div>
-        )
-    }
+        </form>
+
+    </div>
+)
+
 }
-export default SignUp

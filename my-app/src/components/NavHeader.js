@@ -1,7 +1,6 @@
 import "./navheader.css";
 import Button from "./Button";
 import {Link} from "react-router-dom";
-import {useHistory} from "react-router-dom";
 
 function NavHeader() {
 

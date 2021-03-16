@@ -1,10 +1,11 @@
 import "./content.css";
-import {Link, Route} from "react-router-dom";
+import {Link, Route, Switch} from "react-router-dom";
 import SignUp from "../content/SignUp";
 import React, { Component } from "react";
 import SignIn from "../content/SignIn";
 import LoggedInPage from "../content/LoggedInPage";
-import fire from "../Firebase";
+import PrivateRoute from "./PrivateRoute";
+
 
 class Content extends Component {
 
@@ -13,9 +14,11 @@ class Content extends Component {
         return (
 
             <div className="content">
+                <Switch>
                 <Route path="/signUp" component={SignUp}/>
                 <Route path="/signIn" component={SignIn}/>
-                <Route path="/LoggedInPage" component={LoggedInPage}/>
+                <PrivateRoute path="/LoggedInPage" component={LoggedInPage}/>
+                </Switch>
             </div>
 
         )
