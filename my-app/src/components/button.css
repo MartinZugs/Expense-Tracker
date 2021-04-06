@@ -21,6 +21,7 @@
 
     background-color: var(--purple);
     color: white;
+    transition: all 0.3s ease-out;
 }
 
 /* Button Styles */

@@ -1,13 +1,16 @@
 .logo {
     background-color: #FFFFFF;
     grid-area: logo;
-    padding: 5px;
+
     display: flex;
     flex-direction: row;
     font-size: 30px;
     color: #006600;
     justify-content: center;
     align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
 
 }
 

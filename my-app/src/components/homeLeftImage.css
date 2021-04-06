@@ -1,0 +1,5 @@
+.right {
+    flex:1;
+    background: url("../image2.svg") no-repeat;
+    background-size: cover;
+}

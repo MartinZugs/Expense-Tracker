@@ -20,7 +20,7 @@ export default function SignIn(props) {
             setError('')
             setLoading(true)
             await signin(emailRef.current.value, passwordRef.current.value)
-            history.push("/LoggedInPage")
+            history.push("/dashboard")
         } catch {
             setError('Failed to sign in')
         }

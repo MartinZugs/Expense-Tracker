@@ -1,9 +1,9 @@
 import "./content.css";
 import {Link, Route, Switch} from "react-router-dom";
-import SignUp from "../content/SignUp";
+import SignUp from "./SignUp";
 import React, { Component } from "react";
-import SignIn from "../content/SignIn";
-import LoggedInPage from "../content/LoggedInPage";
+import SignIn from "./SignIn";
+import Dashboard from "./Dashboard";
 import PrivateRoute from "./PrivateRoute";
 
 
@@ -15,9 +15,7 @@ class Content extends Component {
 
             <div className="content">
                 <Switch>
-                <Route path="/signUp" component={SignUp}/>
-                <Route path="/signIn" component={SignIn}/>
-                <PrivateRoute path="/LoggedInPage" component={LoggedInPage}/>
+
                 </Switch>
             </div>
 

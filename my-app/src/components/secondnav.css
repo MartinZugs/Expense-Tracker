@@ -1,0 +1,16 @@
+nav {
+    background-color: #F8F9F9;
+    box-shadow: inset 0px 11px 8px -10px #CCC;
+
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    padding: 20px;
+    text-transform: uppercase;
+    margin-right: 150px;
+    margin-left: 150px;
+    color: #006600;
+}

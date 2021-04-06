@@ -1,8 +1,8 @@
-.formContainerSignIn{
+.formContainerSignUp {
 
     display: flex;
     flex-direction:column;
-    margin:10% 30% 5% 10%;
+    margin: 7% auto;
     padding: 10px 10px 10px 10px;
     background: #FFFFFF;
     text-align: center;
@@ -20,7 +20,6 @@
 .form-input {
     margin: 15px;
 
-
 }
 .input-field{
     box-sizing: border-box;
@@ -32,10 +31,7 @@
     max-width: none !important;
 
 }
-
 .error{
     color: purple;
-    font-size: 20px;
+    font-size: 15px;
 }
-
-

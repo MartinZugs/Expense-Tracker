@@ -1,25 +1,13 @@
-.container {
-
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-  grid-template: 1fr 5fr 1fr / 2fr 5fr;
-  grid-template-areas:
-  "logo header"
-   "nav content"
-  "footer footer";
-
+* {
+  box-sizing: border-box;
 }
-
-.content {
-  box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4);
-  grid-area: content;
-  background-image: url("image 2.svg");
-  background-repeat: no-repeat;
-  background-size:     cover;
-
+.body {
+  margin: 0;
 }
-
+.main {
+  display: flex;
+  min-height: calc(100vh - 40vh);
+}
 
 a:link, a:visited, a:hover, a:active, a:focus{
   text-decoration: none;
@@ -27,4 +15,11 @@ a:link, a:visited, a:hover, a:active, a:focus{
 }
 * {
   outline: none;
+}
+
+.navContainer{
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 5px 5px -5px #333;
+
 }
