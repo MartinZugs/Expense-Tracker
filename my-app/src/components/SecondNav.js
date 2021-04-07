@@ -1,6 +1,6 @@
 import React from 'react';
 import './secondnav.css'
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
  const SecondNav = () => {
 
@@ -9,10 +9,10 @@ import {Link} from "react-router-dom";
 
         <nav>
             <ul>
-                <li><Link to="/dashboard">dashboard</Link></li>
-                <li><Link to="/budget">budget</Link></li>
-                <li><Link to="/bills">bills</Link></li>
-                <li><Link to="/advice">advice</Link></li>
+                <li><NavLink to="/dashboard" activeClassName="active">dashboard</NavLink></li>
+                <li><NavLink to="/budget" activeClassName="active">budget</NavLink></li>
+                <li><NavLink to="/bills" activeClassName="active">bills</NavLink></li>
+                <li><NavLink to="/advice" activeClassName="active">advice</NavLink></li>
             </ul>
         </nav>
     )
