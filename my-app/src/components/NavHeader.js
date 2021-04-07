@@ -1,17 +1,21 @@
 import "./navheader.css";
-import Button from "./Button";
-import {Link} from "react-router-dom";
+import {useAuth} from "../contexts/AuthContext";
+import SignInButton from "./SignInButton";
+import SignOutButton from "./SignOutButton";
 
-function NavHeader() {
+const NavHeader = () => {
+
+    const { currentUser } = useAuth()
 
     return (
         <div className="header-navbar">
-            <Link to ="/signIn"><Button
-                type = "button"
-                buttonStyle="btn-primary-outline"
-                buttonSize="btn--small"
-            >Sign in</Button></Link>
+
+            <SignInButton />
+
+            <SignOutButton />
+
         </div>
     )
 }
+
 export default NavHeader;
