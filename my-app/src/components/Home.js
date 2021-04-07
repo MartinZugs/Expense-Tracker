@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Hero from "./Hero";
 import './home.css'
-import HomeLeftImage from "./HomeLeftImage";
+import HomeRightImage from "./HomeRightImage";
 
 
 class Home extends Component {
@@ -11,9 +11,9 @@ class Home extends Component {
     render() {
         return (
 
-                <div className="container">
+                <div className="home-container">
                     <Hero />
-                    <HomeLeftImage />
+                    <HomeRightImage />
                 </div>
 
 
