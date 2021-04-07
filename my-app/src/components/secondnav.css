@@ -14,3 +14,26 @@ nav ul{
     margin-left: 50px;
     color: #006600;
 }
+
+/*************************************** LINKS ******************************************************/
+
+a:link, a:visited, a:hover, a:active, a:focus{
+    text-decoration: none;
+
+}
+* {
+    outline: none;
+}
+
+a {
+    color: #006600;
+}
+
+ li> a:active, li > a:focus {
+    border-top: 0.187rem solid #00CC00;
+}
+li> a:hover {
+    border-top: 0.187rem solid #00CC00;
+    color: #00CC00;
+
+}

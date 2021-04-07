@@ -21,7 +21,6 @@ const Dashboard = () => {
                   <NetWorth />
                   <TotalSpending />
               </div>
-
           </div>
         </div>
     )

@@ -14,6 +14,9 @@ import Footer from "./components/Footer";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import Dashboard from "./components/Dashboard";
+import Budget from "./components/Budget";
+import Bills from "./components/Bills";
+import Advice from "./components/Advice";
 
 class App extends Component {
 
@@ -35,6 +38,9 @@ class App extends Component {
                         <Route path="/signUp" component={SignUp}/>
                         <Route path="/signIn" component={SignIn}/>
                         <PrivateRoute path="/dashboard" component={Dashboard}/>
+                        <PrivateRoute path="/budget" component={Budget}/>
+                        <PrivateRoute path="/bills" component={Bills}/>
+                        <PrivateRoute path="/advice" component={Advice}/>
                     </Switch>
                     </div>
                     <Footer />

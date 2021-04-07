@@ -1,0 +1,14 @@
+.advice-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    align-content: flex-start;
+    width: 100%;
+
+}
+
+.content {
+    display: flex;
+    height: 70.5vh;
+
+}
