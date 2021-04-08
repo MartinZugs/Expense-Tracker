@@ -33,3 +33,9 @@
     flex-basis: 60%;
 
 }
+.negative {
+    color: red;
+}
+.positive {
+    color: green;
+}

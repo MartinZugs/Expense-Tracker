@@ -1,7 +1,26 @@
 import React, {useState} from "react";
-import "./account.css"
+import "./account.css";
+
+
 
 const Accounts = () => {
+
+    function MakePosNeg() {
+        const TDs = document.querySelectorAll('.plusmin');
+
+        for (let i = 0; i < TDs.length; i++) {
+            let temp = TDs[i];
+            if (temp.firstChild.nodeValue.indexOf('-') === 0) {
+                temp.className = 'negative';
+            } else {
+                temp.className = "positive";
+            }
+
+        }
+
+    }
+
+    MakePosNeg();
 
     return (
 

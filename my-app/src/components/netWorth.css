@@ -25,3 +25,9 @@
 .net-worth-table th {
     color: gray;
 }
+.negative {
+    color: red;
+}
+.positive {
+    color: green;
+}
