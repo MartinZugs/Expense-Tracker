@@ -6,3 +6,13 @@
     color:#626567;
     text-transform: uppercase;
 }
+
+
+.accounts-table tr{
+    height:2px;
+    width:2px;
+}
+.accounts-table td{
+    width:2px;
+    height:2px;
+}

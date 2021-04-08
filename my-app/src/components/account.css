@@ -11,8 +11,10 @@
     padding: 10px;
 }
 .accounts-table td {
-    padding: 30px;
+    padding: 15px;
+    width:5px;
 }
 .accounts-table th {
     color: gray;
+
 }

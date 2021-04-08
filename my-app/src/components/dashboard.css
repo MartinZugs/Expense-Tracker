@@ -16,6 +16,7 @@
 
 .sidebar{
     width: 30%;
+    height: 80%;
     border-color: lightgray;
     background: linear-gradient(lightgray,lightgray) right / 1px 90% no-repeat, white;
 
@@ -23,7 +24,7 @@
 }
 
 .themain > * {
-   height: 30vh;
+   height: 40vh;
 
 
 }
