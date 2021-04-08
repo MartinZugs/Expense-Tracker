@@ -13,8 +13,8 @@ public class AccountController {
             value = "/account/new/{id}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public Account createAccount(@RequestBody Account account, @PathVariable long user_id) {
-        System.out.println("New Account added!");
+    public Accounts createAccount(@RequestBody Accounts account, @PathVariable long user_id) {
+        System.out.println("New Accounts added!");
         return account_service.createAccount(account, user_id);
     }
 }

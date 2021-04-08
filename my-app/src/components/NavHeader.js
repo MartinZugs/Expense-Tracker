@@ -7,15 +7,14 @@ const NavHeader = () => {
 
     const { currentUser } = useAuth()
 
+
+
     return (
         <div className="header-navbar">
-
-            <SignInButton />
-
-            <SignOutButton />
+            {currentUser? <SignOutButton /> : <SignInButton />}
 
         </div>
     )
-}
+};
 
 export default NavHeader;

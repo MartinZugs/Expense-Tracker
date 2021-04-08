@@ -16,16 +16,14 @@
 
 .sidebar{
     width: 30%;
-    padding: 20px;
-    border-right-style: solid;
     border-color: lightgray;
-    border-width: 1px;
+    background: linear-gradient(lightgray,lightgray) right / 1px 90% no-repeat, white;
 
 
 }
 
 .themain > * {
-   height: 40vh;
+   height: 30vh;
 
 
 }

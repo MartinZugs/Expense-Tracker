@@ -6,7 +6,7 @@ const TotalSpending = () => {
     return (
 
         <div className="total-spending-container">
-            TotalSpending component
+            <h3>Total Spending</h3>
         </div>
     )
 

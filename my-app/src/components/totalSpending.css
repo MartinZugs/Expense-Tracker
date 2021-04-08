@@ -1,5 +1,9 @@
 .total-spending-container {
-    border-top-style: solid;
-    border-color: lightgray;
-    border-width: 1px;
+    background: linear-gradient(lightgray,white) top center/ 80% 1px no-repeat, white;
+    padding: 20px;
+}
+
+.total-spending-container h3 {
+    color:#626567;
+    text-transform: uppercase;
 }

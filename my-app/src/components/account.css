@@ -1,1 +1,18 @@
+.accounts-container {
+    padding: 20px;
 
+}
+.accounts-container h3 {
+    color:#626567;
+    text-transform: uppercase;
+}
+.accounts-table {
+    width: 80%;
+    padding: 10px;
+}
+.accounts-table td {
+    padding: 30px;
+}
+.accounts-table th {
+    color: gray;
+}

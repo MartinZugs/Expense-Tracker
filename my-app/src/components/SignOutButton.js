@@ -1,7 +1,7 @@
 import {Link, useHistory} from "react-router-dom";
 import Button from "./Button";
 import {useAuth} from "../contexts/AuthContext";
-import React, {useState} from "react";;
+import React, {useState} from "react";
 
 const SignOutButton = () => {
 

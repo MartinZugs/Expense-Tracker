@@ -1,11 +1,12 @@
+import './netWorth.css'
 
 const NetWorth = () => {
 
 
     return (
 
-        <div>
-            NetWorth component
+        <div className="net-worth-container">
+            <h3>Net Worth</h3>
         </div>
     )
 
