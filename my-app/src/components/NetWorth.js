@@ -7,7 +7,7 @@ const NetWorth = () => {
 
         <div className="net-worth-container">
             <h3>Net Worth</h3>
-            <table className="accounts-table">
+            <table className="net-worth-table">
 
                 <tr>
                     <th>Assets:</th>

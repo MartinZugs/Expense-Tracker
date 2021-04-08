@@ -15,7 +15,7 @@
 }
 
 .sidebar{
-    width: 30%;
+    flex-basis: 30%;
     height: 80%;
     border-color: lightgray;
     background: linear-gradient(lightgray,lightgray) right / 1px 90% no-repeat, white;
@@ -24,12 +24,12 @@
 }
 
 .themain > * {
-   height: 40vh;
+   height: 30vh;
 
 
 }
 
 .themain {
-    width: 70%;
+    flex-basis: 60%;
 
 }
