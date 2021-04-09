@@ -1,16 +1,20 @@
+* {
+    box-sizing: border-box;
+}
 .dashboard-container {
     display: flex;
     flex-direction: column;
     margin: 0;
     align-content: flex-start;
-    width: 100%;
+    flex-basis: 100%;
+    min-width: 0;
 
 }
 
 
 .content {
     display: flex;
-    height: 70.5vh;
+
 
 }
 
@@ -25,13 +29,13 @@
 
 .themain > * {
    height: 30vh;
-
+    min-width: 0;
 
 }
 
 .themain {
     flex-basis: 60%;
-
+    min-width: 0;
 }
 .negative {
     color: red;

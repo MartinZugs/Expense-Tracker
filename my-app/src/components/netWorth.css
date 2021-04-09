@@ -1,5 +1,9 @@
+* {
+    box-sizing: border-box;
+}
 .net-worth-container {
     padding: 20px;
+    min-width: 0;
 }
 
 .net-worth-container h3 {
