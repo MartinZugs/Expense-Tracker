@@ -15,13 +15,14 @@ const NetWorth = () => {
             }
 
         }
-
     }
-    MakePosNeg();
+   NetWorth.onLoad = MakePosNeg();
 
     return (
 
-        <div className="net-worth-container">
+
+
+        <div  className="net-worth-container">
             <h3>Net Worth</h3>
             <table className="net-worth-table">
 

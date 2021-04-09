@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
-import ReactDOM from 'react-dom';
 import "./account.css";
 
 
 
 
 const Accounts = () => {
+
     function MakePosNeg() {
         const TDs = document.querySelectorAll('.plusmin');
 
@@ -20,12 +20,12 @@ const Accounts = () => {
         }
 
     }
-    MakePosNeg();
 
-
+    window.onLoad = MakePosNeg();
 
 
         return (
+
 
             <div className="accounts-container">
                 <h3>Accounts</h3>
@@ -61,6 +61,7 @@ const Accounts = () => {
                 </table>
 
             </div>
+
         )
 
 }
