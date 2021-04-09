@@ -14,7 +14,7 @@
     text-transform: uppercase;
 }
 .accounts-table {
-    flex-basis : 80%;
+    width : 80%;
     padding: 10px;
 }
 .accounts-table td {
@@ -29,3 +29,4 @@
 .positive {
     color: green;
 }
+

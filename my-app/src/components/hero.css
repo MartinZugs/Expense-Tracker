@@ -2,6 +2,7 @@
 .left {
     display: flex;
     order: -1;
+    flex: 30%;
     flex-direction: column;
     padding-top: 20px;
     padding-right: 60px;
@@ -9,7 +10,7 @@
     align-items: center;
     background-color: #FFFFFF;
     color: #4F4F4F;
-    flex-basis: 40vw;
+
     min-width: 0;
 
 

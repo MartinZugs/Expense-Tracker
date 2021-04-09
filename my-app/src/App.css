@@ -25,12 +25,16 @@ a:link, a:visited, a:hover, a:active, a:focus{
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 5px 5px -5px #333;
-  height: 40%;
   overflow: hidden;
   min-width: 0;
+
 }
 @media (max-width: 800px) {
   * {
+
     flex-direction: column;
+    padding: 10px;
+
   }
+
 }

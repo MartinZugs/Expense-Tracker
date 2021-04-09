@@ -18,7 +18,7 @@
 
 .sidebar{
     display: flex;
-    flex-basis: 30%;
+    flex-direction: column;
     border-color: lightgray;
     background: linear-gradient(lightgray,lightgray) right / 1px 90% no-repeat, white;
     min-width: 0;
@@ -28,7 +28,7 @@
 
 .themain > * {
     display: flex;
-    height: 30vh;
+    height: 45%;
     min-width: 0;
 
 }
@@ -42,4 +42,12 @@
 }
 .positive {
     color: green;
+}
+
+@media (max-width: 800px) {
+    .sidebar{
+        background: linear-gradient(lightgray,white) bottom center/ 80% 1px no-repeat, white;;
+
+    }
+
 }

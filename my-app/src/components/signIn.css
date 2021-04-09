@@ -38,3 +38,10 @@
 }
 
 
+@media (max-width: 800px) {
+    .formContainerSignIn{
+        width: 100%;
+
+    }
+
+}
