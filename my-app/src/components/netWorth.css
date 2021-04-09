@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 .net-worth-container {
+    display: flex;
+    flex-direction: row;
     padding: 20px;
     min-width: 0;
 }

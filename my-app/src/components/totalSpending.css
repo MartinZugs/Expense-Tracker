@@ -2,9 +2,12 @@
     box-sizing: border-box;
 }
 .total-spending-container {
+    display: flex;
+    flex-direction: row;
     background: linear-gradient(lightgray,white) top center/ 80% 1px no-repeat, white;
     padding: 20px;
     min-width: 0;
+    overflow:hidden;
 }
 
 .total-spending-container h3 {
