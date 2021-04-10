@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+
 import "./account.css";
 import {Component} from "react";
 
@@ -17,7 +17,7 @@ class Accounts extends Component {
 
         MakePosNeg()
         {
-            const TDs = document.querySelectorAll('.plusmin');
+            const TDs = document.querySelectorAll('.accounts-column-plusmin');
 
             for (let i = 0; i < TDs.length; i++) {
                 let temp = TDs[i];
@@ -39,38 +39,32 @@ class Accounts extends Component {
 
 
         <div className="accounts-container">
+
             <h3>Accounts</h3>
-
-            <table className="accounts-table">
-
-                <table>
-                    <tbody>
-                    <th>Checking Account:</th>
-                    <td className="plusmin">$5,000.00</td>
-                    </tbody>
-                    <tbody>
-                    <th>Savings Account:</th>
-                    <td className="plusmin">$80,000.00</td>
-                    </tbody>
-                <tbody>
-                    <th>Retirement Account:</th>
-                    <td className="plusmin">$150,000.00</td>
-                </tbody>
-                    <tbody>
-                    <th>Investments:</th>
-                    <td className="plusmin">$52,000.00</td>
-                    </tbody>
-                    <tbody>
-                    <th>Credit Cards:</th>
-                    <td className="plusmin">-$14,000.00</td>
-                    </tbody>
-                    <tbody>
-                    <th>Loans:</th>
-                    <td className="plusmin">-$250,000.00</td>
-                    </tbody>
-                </table>
-            </table>
-
+            <div className="accounts-row">
+                <div className="accounts-column">Checking Account</div>
+                <div className="accounts-column-plusmin">$5,000.00</div>
+            </div>
+            <div className="accounts-row">
+                <div className="accounts-column">Savings Account</div>
+                <div className="accounts-column-plusmin">$80,000.00</div>
+            </div>
+            <div className="accounts-row">
+                <div className="accounts-column">Retirement</div>
+                <div className="accounts-column-plusmin">$150,000.00</div>
+            </div>
+            <div className="accounts-row">
+                <div className="accounts-column">Investments</div>
+                <div className="accounts-column-plusmin">$52,000.00</div>
+            </div>
+            <div className="accounts-row">
+                <div className="accounts-column">Credit Cards</div>
+                <div className="accounts-column-plusmin">-$14,000.00</div>
+            </div>
+            <div className="accounts-row">
+                <div className="accounts-column">Loans</div>
+                <div className="accounts-column-plusmin">-$250,000.00</div>
+            </div>
         </div>
 
     )
