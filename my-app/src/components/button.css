@@ -10,7 +10,6 @@
 
 .btn {
     font-family: "Roboto", sans-serif;
-    font-weight: 400;
     border-radius: 25px;
     cursor: pointer;
     margin: 3px;
@@ -76,4 +75,10 @@
 .btn--large {
     font-size: 30px;
     padding: 20px;
+}
+@media (max-width: 800px) {
+    .btn{
+        font-size: 15px;
+    }
+
 }

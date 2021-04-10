@@ -10,7 +10,6 @@
     align-items: center;
     background-color: #FFFFFF;
     color: #4F4F4F;
-
     min-width: 0;
 
 
@@ -30,3 +29,9 @@
 
 }
 
+@media (max-width: 800px) {
+    .left{
+padding: 0;
+    }
+
+}

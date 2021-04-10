@@ -29,8 +29,8 @@ const TotalSpending = () =>{
         <div className="total-spending-container">
             <h3>Total Spending</h3>
 
-        <ResponsiveContainer width="70%" height="100%">
-            <PieChart width={200} height={150}>
+        <ResponsiveContainer width="60%" height="100%">
+            <PieChart width="200" height="100">
                 <Pie
                     data={data}
                     cx="50%"

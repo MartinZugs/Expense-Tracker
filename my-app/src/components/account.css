@@ -3,22 +3,25 @@
 }
 
 .accounts-container {
-    display: flex;
+
     flex-direction: column;
-    padding: 20px;
+    padding:50px;
     min-width: 0;
+    margin: 0;
 
 }
 .accounts-container h3 {
     color:#626567;
     text-transform: uppercase;
 }
+
 .accounts-table {
-    width : 80%;
     padding: 10px;
+    width: 100%;
+
 }
 .accounts-table td {
-    padding: 30px;
+    padding: 20px;
 }
 .accounts-table th {
     color: gray;
@@ -30,3 +33,11 @@
     color: green;
 }
 
+@media (max-width: 800px) {
+    .accounts-container{
+        flex-direction: column;
+
+
+    }
+
+}

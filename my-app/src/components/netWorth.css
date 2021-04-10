@@ -37,3 +37,10 @@
 .positive {
     color: green;
 }
+
+@media (max-width: 800px) {
+    .net-worth-container {
+        flex-direction: column;
+        padding: 0;
+    }
+}

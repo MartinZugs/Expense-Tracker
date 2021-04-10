@@ -22,6 +22,7 @@
     border-color: lightgray;
     background: linear-gradient(lightgray,lightgray) right / 1px 90% no-repeat, white;
     min-width: 0;
+    flex-basis: 40%;
 
 
 }
@@ -47,7 +48,13 @@
 @media (max-width: 800px) {
     .sidebar{
         background: linear-gradient(lightgray,white) bottom center/ 80% 1px no-repeat, white;;
+        padding: 0;
+    }
+    .themain > * {
+        display: flex;
+        height: 50%;
+        width: 100%;
+        min-width: 0;
 
     }
-
 }
