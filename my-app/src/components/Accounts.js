@@ -11,7 +11,11 @@ class Accounts extends Component {
     componentDidMount() {
 
 
-       function MakePosNeg()
+        function MakePosNeg() {
+
+        }
+
+        MakePosNeg()
         {
             const TDs = document.querySelectorAll('.plusmin');
 
