@@ -1,9 +1,18 @@
 import './netWorth.css'
-import {useEffect} from "react/cjs/react.production.min";
+import {Component} from "react";
 
-const NetWorth = () => {
+class NetWorth extends Component {
+
+
+    componentDidMount()
+{
 
     function MakePosNeg() {
+
+    }
+
+    MakePosNeg()
+    {
         const TDs = document.querySelectorAll('.net-worth-column-plusmin');
 
         for (let i = 0; i < TDs.length; i++) {
@@ -16,11 +25,11 @@ const NetWorth = () => {
 
         }
     }
-   NetWorth.onLoad = MakePosNeg();
-
+}
+  render(){
     return (
 
-        <div  className="net-worth-container">
+        <div className="net-worth-container">
             <h3>Net Worth</h3>
             <div className="net-worth-row">
                 <div className="net-worth-column">Assets</div>
@@ -37,8 +46,7 @@ const NetWorth = () => {
         </div>
 
     )
-
 }
-
+}
 
 export default NetWorth;
