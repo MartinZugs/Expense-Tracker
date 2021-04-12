@@ -60,7 +60,7 @@ class TotalSpending extends Component {
                 <div className="total-spending-container">
                     <h3>Total Spending</h3>
 
-                    <div id="chartdiv" style={{width: "60%", height: "200px"}}></div>
+                    <div className id="chartdiv" style={{width: "60%", height: "200px"}}></div>
 
                 </div>
             )
