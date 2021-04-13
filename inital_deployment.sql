@@ -45,3 +45,9 @@ CREATE TABLE Bills (
     transaction_id INT,
     FOREIGN KEY (transaction_id) REFERENCES Transactions(transaction_id)
 );
+
+-- TO CREATE A NEW USER
+
+CREATE USER 'username'@'%' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON * . * TO 'username'@'%';
+FLUSH PRIVILEGES;
