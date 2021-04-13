@@ -1,8 +1,16 @@
-
+* { box-sizing: border-box; }
 
 .footer {
     display: flex;
-    height: 15vh;
+    height: 20vh;
     background-color: #F8F9F9;
-    box-shadow: inset 0px 11px 8px -10px #CCC;
+    margin: 0;
+
+}
+@media (max-width: 800px) {
+    .footer{
+       visibility: hidden;
+
+    }
+
 }

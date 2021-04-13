@@ -1,24 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+.accounts-column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+.accounts-column-plusmin {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.accounts-row:after {
+    content: "";
+    display: table;
+    clear: both;
+    padding: 15px;
+}
+
+
 .accounts-container {
-    padding: 20px;
+
+    flex-direction: column;
+    padding:20px;
+    min-width: 0;
+    margin: 0;
 
 }
 .accounts-container h3 {
-    color:#626567;
+    color: #626567;
     text-transform: uppercase;
-}
-.accounts-table {
-    width: 80%;
-    padding: 10px;
-}
-.accounts-table td {
-    padding: 30px;
-}
-.accounts-table th {
-    color: gray;
 }
 .negative {
     color: red;
 }
 .positive {
     color: green;
+}
+
+@media (max-width: 800px) {
+    .accounts-container{
+        flex-direction: column;
+
+
+    }
+
 }

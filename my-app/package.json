@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "@amcharts/amcharts4": "^4.10.17",
     "@firebase/component": "^0.2.1"
   }
 }

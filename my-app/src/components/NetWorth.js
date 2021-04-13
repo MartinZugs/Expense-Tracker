@@ -1,10 +1,19 @@
 import './netWorth.css'
-import {useEffect} from "react/cjs/react.production.min";
+import {Component} from "react";
 
-const NetWorth = () => {
+class NetWorth extends Component {
+
+
+    componentDidMount()
+{
 
     function MakePosNeg() {
-        const TDs = document.querySelectorAll('.plusmin');
+
+    }
+
+    MakePosNeg()
+    {
+        const TDs = document.querySelectorAll('.net-worth-column-plusmin');
 
         for (let i = 0; i < TDs.length; i++) {
             let temp = TDs[i];
@@ -16,33 +25,28 @@ const NetWorth = () => {
 
         }
     }
-   NetWorth.onLoad = MakePosNeg();
-
+}
+  render(){
     return (
 
-
-
-        <div  className="net-worth-container">
+        <div className="net-worth-container">
             <h3>Net Worth</h3>
-            <table className="net-worth-table">
-
-                <tr>
-                    <th>Assets:</th>
-                    <td className="plusmin">$287,000.00</td>
-                </tr>
-                <tr>
-                    <th>Debt:</th>
-                    <td className="plusmin">-$264,000.00</td>
-                </tr>
-                <tr>
-                    <th>Net Worth:</th>
-                    <td className="plusmin">$23,000.00</td>
-                </tr>
-            </table>
+            <div className="net-worth-row">
+                <div className="net-worth-column">Assets</div>
+                <div className="net-worth-column-plusmin">$287,000.00</div>
+            </div>
+            <div className="net-worth-row">
+                <div className="net-worth-column">Debt</div>
+                <div className="net-worth-column-plusmin">-$264,000.00</div>
+            </div>
+            <div className="net-worth-row">
+                <div className="net-worth-column">Net Worth</div>
+                <div className="net-worth-column-plusmin">$23,000.00</div>
+            </div>
         </div>
+
     )
-
 }
-
+}
 
 export default NetWorth;

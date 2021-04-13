@@ -1,7 +1,8 @@
 .right {
     display: flex;
-    flex-direction: column;
-    flex:1;
+    flex-direction: row;
+    flex:80%;
     background: url("../image2.svg") no-repeat;
     background-size: cover;
+
 }

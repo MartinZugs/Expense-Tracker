@@ -1,9 +1,27 @@
+* {
+    box-sizing: border-box;
+}
 .total-spending-container {
+    display: flex;
+    flex-direction: row;
     background: linear-gradient(lightgray,white) top center/ 80% 1px no-repeat, white;
-    padding: 20px;
+    padding:20px;
+    min-width: 0;
+    overflow:hidden;
 }
 
 .total-spending-container h3 {
     color:#626567;
     text-transform: uppercase;
+}
+
+
+
+@media (max-width: 800px) {
+    .total-spending-container{
+        flex-direction: column;
+        padding: 0;
+
+    }
+
 }
