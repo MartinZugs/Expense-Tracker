@@ -35,6 +35,7 @@ public class SpringController {
         return user_service.createUser(user);
     }
 
+
     /* ---------- Transaction API ----------- */
     @PutMapping(
             value = "/transaction/new/{id}",
@@ -45,8 +46,8 @@ public class SpringController {
         return transaction_service.createTransaction(transaction, account_id);
     }
 
-    /* ----------- Account API ------------- */
 
+    /* ----------- Account API ------------- */
     @PutMapping(
             value = "/account/new/{id}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
