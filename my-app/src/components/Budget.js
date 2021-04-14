@@ -1,5 +1,6 @@
 import SecondNav from "./SecondNav";
 import './budget.css';
+import Budgetinfo from "./Budgetinfo";
 
 
 const Budget = () => {
@@ -10,10 +11,10 @@ const Budget = () => {
         <div className='budget-page-wrapper'>
             <SecondNav />
             <div className="row">
-                <div className="column">
-                    <h1>Column1</h1>
+                <div className="column1">
+                    <Budgetinfo />
                 </div>
-                <div className="column">
+                <div className="column2">
                     <h1>Column2</h1>
                 </div>
             </div>

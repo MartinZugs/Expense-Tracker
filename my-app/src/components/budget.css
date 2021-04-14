@@ -13,12 +13,15 @@
 
 }
 
-.column {
-    flex: 50%;
+.column1 {
+    flex: 70%;
+    margin: 0;
+    flex-grow: 1;
+}
+.column2 {
+    flex: 30%;
     margin: 0;
     flex-grow: 1;
 
 
 }
-
-

@@ -50,6 +50,10 @@
   },
   "devDependencies": {
     "@amcharts/amcharts4": "^4.10.17",
-    "@firebase/component": "^0.2.1"
+    "@firebase/component": "^0.2.1",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/pickers": "^3.3.10",
+    "uuid": "^8.3.2"
   }
 }
