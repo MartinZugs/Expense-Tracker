@@ -31,7 +31,6 @@ public class SpringController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public User createAccount(@RequestBody User user) {
-        System.out.println("New User added!");
         return user_service.createUser(user);
     }
 
@@ -42,7 +41,6 @@ public class SpringController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public Transaction createTransaction(@RequestBody Transaction transaction, @PathVariable long account_id) {
-        System.out.println("New transaction added!");
         return transaction_service.createTransaction(transaction, account_id);
     }
 
@@ -50,7 +48,6 @@ public class SpringController {
     /* ----------- Account API ------------- */
     @GetMapping(value = "/account", produces = MediaType.APPLICATION_JSON_VALUE)
     public Account getAccount(){
-        System.out.println("Returning account data ...");
         return new Account(2, "savings", AccountType.OTHER);
     }
 
@@ -59,7 +56,6 @@ public class SpringController {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public Account createAccount(@RequestBody Account account, @PathVariable long user_id) {
-        System.out.println("New Account added!");
         return account_service.createAccount(account, user_id);
     }
 }
