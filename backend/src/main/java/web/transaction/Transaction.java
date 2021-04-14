@@ -27,4 +27,25 @@ public class Transaction {
     }
 
     public Transaction() {}
+
+    /* ------- Getter & Setter ----- */
+    public Date getDate() {
+        return date;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public TransactionCategory getCategory() {
+        return category;
+    }
+
+    public boolean getIsBill() {
+        return isBill;
+    }
 }

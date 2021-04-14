@@ -17,4 +17,17 @@ public class Account {
         this.name = name;
         this.type = AccountType.OTHER;
     }
+
+    /* ------ Getter & Setter ------ */
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public AccountType getType() {
+        return type;
+    }
 }

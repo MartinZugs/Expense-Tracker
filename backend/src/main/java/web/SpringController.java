@@ -48,6 +48,12 @@ public class SpringController {
 
 
     /* ----------- Account API ------------- */
+    @GetMapping(value = "/account", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Account getAccount(){
+        System.out.println("Returning account data ...");
+        return new Account(2, "savings", AccountType.OTHER);
+    }
+
     @PutMapping(
             value = "/account/new/{id}",
             consumes = MediaType.APPLICATION_JSON_VALUE,
