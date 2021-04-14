@@ -20,10 +20,10 @@ import Budget from "./components/Budget";
 import Bills from "./components/Bills";
 import Advice from "./components/Advice";
 
-class App extends Component {
+function App() {
 
 
-    render() {
+
 
         return (
             <Router>
@@ -31,7 +31,7 @@ class App extends Component {
                     <div className="body">
                     <div className="navContainer">
                         <LogoHeader />
-                        <NavHeader />
+                        <NavHeader  />
 
                     </div>
                     <div className="main">
@@ -45,13 +45,14 @@ class App extends Component {
                         <PrivateRoute path="/advice" component={Advice}/>
                     </Switch>
                     </div>
-                    <Footer />
+                        <Footer />
                     </div>
+
                 </AuthProvider>
 
             </Router>
         );
-    }
+
 }
 
 export default App;

@@ -7,14 +7,19 @@ const Budget = () => {
 
     return (
 
-        <div className="budget-container">
+        <div className='budget-page-wrapper'>
             <SecondNav />
-            <div className="content">
-                <h1>Budget Content</h1>
+            <div className="row">
+                <div className="column">
+                    <h1>Column1</h1>
+                </div>
+                <div className="column">
+                    <h1>Column2</h1>
+                </div>
             </div>
-
-
         </div>
+
+
     )
 
 }

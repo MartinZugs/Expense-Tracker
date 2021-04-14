@@ -2,13 +2,15 @@
 * {
   box-sizing: border-box;
 }
+
+
 .body {
   margin: 0;
 
-
 }
 .main {
-  display: flex;
+
+  flex-grow: 1;
   min-height: calc(100vh - 40vh);
 }
 
@@ -36,4 +38,8 @@ a:link, a:visited, a:hover, a:active, a:focus{
     padding: 10px;
   }
 
+}
+
+header, main, footer {
+  flex-shrink: 0;
 }
