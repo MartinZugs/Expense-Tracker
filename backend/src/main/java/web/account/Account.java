@@ -1,18 +1,18 @@
 package web.account;
 
-public class Accounts {
+public class Account {
 
     long id;
     String name;
     AccountType type;
 
-    public Accounts(long id, String name, AccountType type) {
+    public Account(long id, String name, AccountType type) {
         this.id = id;
         this.name = name;
         this.type = type;
     }
 
-    public Accounts(long id, String name) {
+    public Account(long id, String name) {
         this.id = id;
         this.name = name;
         this.type = AccountType.OTHER;

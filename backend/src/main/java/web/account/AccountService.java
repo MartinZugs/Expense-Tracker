@@ -5,9 +5,9 @@ import java.util.List;
 
 public class AccountService {
 
-    private final List<Accounts> accounts = new LinkedList<>();
+    private final List<Account> accounts = new LinkedList<>();
 
-    public Accounts createAccount (Accounts account, long user_id) {
+    public Account createAccount (Account account, long user_id) {
         accounts.add(account);
         return account;
     }
