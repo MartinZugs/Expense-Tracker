@@ -1,6 +1,7 @@
 import SecondNav from "./SecondNav";
 import './budget.css';
 import Budgetinfo from "./Budgetinfo";
+import BudgetChart from "./BudgetChart";
 
 
 const Budget = () => {
@@ -15,7 +16,7 @@ const Budget = () => {
                     <Budgetinfo />
                 </div>
                 <div className="column2">
-                    <h1>Column2</h1>
+                    <BudgetChart/>
                 </div>
             </div>
         </div>

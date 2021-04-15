@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './budgetinfo.css';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-function App() {
+function BudgetInfo() {
     const classes = useStyles()
     const [inputFields, setInputFields] = useState([
         { id: uuidv4(),  Month:'', Name: '', Budget: '', Expense:'' },
@@ -63,6 +64,7 @@ function App() {
     return (
         <Container>
             <h1>Budget Info</h1>
+
             <form className={classes.root} onSubmit={handleSubmit}>
 
                 { inputFields.map(inputField => (
@@ -139,7 +141,7 @@ function App() {
     );
 }
 
-export default App;
+export default BudgetInfo;
 
 
 

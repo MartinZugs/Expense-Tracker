@@ -7,7 +7,6 @@ import HomeRightImage from "./HomeRightImage";
 class Home extends Component {
 
 
-
     render() {
         return (
 
