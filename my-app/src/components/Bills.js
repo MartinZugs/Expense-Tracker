@@ -1,6 +1,7 @@
 import SecondNav from "./SecondNav";
 import './bills.css';
 import Billinfo from "./Billinfo";
+import BillCalendar from "./BillCalendar";
 
 
 const Bills = () => {
@@ -13,18 +14,11 @@ const Bills = () => {
                     <Billinfo />
                 </div>
                 <div className="column2">
-                    <h1>BillCalendar</h1>
+                    <BillCalendar/>
                 </div>
             </div>
         </div>
 
-       // <div className="bills-container">
-         //   <SecondNav />
-           // <div className="content">
-             //   <h1>Bills Content</h1>
-            //</div>
-
-        //</div>
     )
 
 }

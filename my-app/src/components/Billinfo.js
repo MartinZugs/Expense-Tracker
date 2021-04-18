@@ -8,6 +8,14 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
 import { v4 as uuidv4 } from 'uuid';
 import { makeStyles } from '@material-ui/core/styles';
+import 'date-fns';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+    MuiPickersUtilsProvider,
+    KeyboardDatePicker,
+} from '@material-ui/pickers';
+import {lightGreen} from "@material-ui/core/colors";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 function BudgetInfo() {
     const classes = useStyles()
     const [inputFields, setInputFields] = useState([
-        { id: uuidv4(),  BillName: '', DueDate: '', Amount:'' },
+        { id: uuidv4(),  BillName: '',  Amount:'' },
     ]);
 
 
@@ -48,8 +56,8 @@ function BudgetInfo() {
         })
         setInputFields(newInputFields);
     }
-    const handleAddFields = () => {
-        setInputFields([...inputFields, { id: uuidv4(),  Billname: '', DueDate: '', Amount:'' }])
+    const handleAddFields = (date) => {
+        setInputFields([...inputFields, { id: uuidv4(),  BillName: '', Amount:'' }])
 
     }
 
@@ -59,11 +67,15 @@ function BudgetInfo() {
         setInputFields(values);
     }
 
-
+    const handleDateChange = (date) => {
+        setSelectedDate(date);
+    };
+    const [selectedDate, setSelectedDate] = React.useState(new Date('2021-01-01T21:11:54'));
+console.log(selectedDate);
 
     return (
         <Container className="bill-info-container">
-            <h3 classname="bill-name">Bill Info</h3>
+            <h3 className="bill-name">Bill Info</h3>
 
             <form className={classes.root} onSubmit={handleSubmit}>
 
@@ -72,7 +84,7 @@ function BudgetInfo() {
 
                         <TextField
                             name="BillName"
-                            label="BillName"
+                            label="Bill Name"
                             variant="outlined"
                             size="small"
                             InputProps={
@@ -82,18 +94,6 @@ function BudgetInfo() {
                             onChange={event => handleChangeInput(inputField.id, event)}
                         />
 
-                        <TextField
-                            name="DueDate"
-                            label="DueDate"
-                            variant="outlined"
-                            //filled
-                            size="small"
-                            InputProps={
-                                {className: classes.input1}
-                            }
-                            value={inputField.DueDate}
-                            onChange={event => handleChangeInput(inputField.id, event)}
-                        />
                         <TextField
                             name="Amount"
                             label="Amount"
@@ -105,6 +105,21 @@ function BudgetInfo() {
                             value={inputField.Amount}
                             onChange={event => handleChangeInput(inputField.id, event)}
                         />
+                        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                            <KeyboardDatePicker
+                                disableToolbar
+                                variant="inline"
+                                format="MM/dd/yyyy"
+                                margin="normal"
+                                id="date-picker-inline"
+                                label="Due Date"
+                                value={selectedDate}
+                                onChange={handleDateChange}
+                                KeyboardButtonProps={{
+                                    'aria-label': 'change date',
+                                }}
+                            />
+                        </MuiPickersUtilsProvider>
                         <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
                             <RemoveIcon />
                         </IconButton>
