@@ -59,10 +59,13 @@ function BudgetInfo() {
         setInputFields(values);
     }
 
+    const dateObj = new Date()
+    const monthName = dateObj.toLocaleString("default", { month: "long" })
+// monthName = "November"
 
     return (
         <Container className="budget-info-container">
-            <h3>Budget </h3>
+            <h3>Budget for {monthName} </h3>
 
             <form className={classes.root} onSubmit={handleSubmit}>
 

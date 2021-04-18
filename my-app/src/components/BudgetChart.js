@@ -3,10 +3,12 @@ import Chart from "react-google-charts";
 
 const BudgetChart = () =>  {
 
+    const dateObj = new Date()
+    const monthName = dateObj.toLocaleString("default", { month: "long" })
 
     return (
         <div className="budget-chart-container">
-            <h3>Budget Chart</h3>
+            <h3>{monthName} Budget Chart</h3>
             <Chart
                 width={'600px'}
                 height={'400px'}
