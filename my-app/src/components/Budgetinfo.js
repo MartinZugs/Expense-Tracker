@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import './budgetinfo.css';
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
-
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
-import Icon from '@material-ui/core/Icon';
 import { v4 as uuidv4 } from 'uuid';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -32,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 function BudgetInfo() {
     const classes = useStyles()
     const [inputFields, setInputFields] = useState([
-        { id: uuidv4(),  Month:'', Name: '', Budget: '', Expense:'' },
+        { id: uuidv4(),  Category: '', Budget: '', Expense:'' },
     ]);
 
 
@@ -51,7 +49,7 @@ function BudgetInfo() {
         setInputFields(newInputFields);
     }
     const handleAddFields = () => {
-        setInputFields([...inputFields, { id: uuidv4(),  Month:'',Name: '', Budget: '', Expense:'' }])
+        setInputFields([...inputFields, { id: uuidv4(),  Category: '', Budget: '', Expense:'' }])
 
     }
 
@@ -61,37 +59,28 @@ function BudgetInfo() {
         setInputFields(values);
     }
 
+
     return (
-        <Container>
-            <h1>Budget Info</h1>
+        <Container className="budget-info-container">
+            <h3>Budget </h3>
 
             <form className={classes.root} onSubmit={handleSubmit}>
 
                 { inputFields.map(inputField => (
                     <div key={inputField.id}>
-                        <TextField
-                            name="Month"
-                            label="Month"
-                            variant="outlined"
-                            size="small"
-                            InputProps={
-                                {className: classes.input1}
-                            }
-                            value={inputField.Month}
-                            onChange={event => handleChangeInput(inputField.id, event)}
-                        />
 
                         <TextField
-                            name="Name"
-                            label="Name"
+                            name="Category"
+                            label="Category"
                             variant="outlined"
                             size="small"
                             InputProps={
                                 {className: classes.input}
                             }
-                            value={inputField.Name}
+                            value={inputField.Category}
                             onChange={event => handleChangeInput(inputField.id, event)}
                         />
+
                         <TextField
                             name="Budget"
                             label="Budget"
@@ -109,7 +98,6 @@ function BudgetInfo() {
                             label="Expense"
                             variant="outlined"
                             size="small"
-                            type="number"
                             InputProps={
                                 {className: classes.input1}
                             }

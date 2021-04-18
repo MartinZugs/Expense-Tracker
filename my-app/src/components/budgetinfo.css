@@ -1,2 +1,8 @@
-form {
+.budget-info-container {
+    padding: 30px;
 }
+
+.budget-info-container h3 {
+     color:#626567;
+     text-transform: uppercase;
+ }

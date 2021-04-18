@@ -1,7 +1,7 @@
 import SecondNav from "./SecondNav";
 import Accounts from "./Accounts";
 import NetWorth from "./NetWorth";
-import TotalSpending from "./TotalSpending";
+import AssetsChart from "./AssetsChart";
 import './dashboard.css'
 
 
@@ -18,7 +18,7 @@ const Dashboard = () => {
 
               <div className="themain">
                   <NetWorth />
-                  <TotalSpending />
+                  <AssetsChart />
               </div>
           </div>
         </div>

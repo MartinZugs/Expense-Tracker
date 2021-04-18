@@ -1,26 +1,26 @@
 
-import "./totalSpending.css"
+import "./assetsChart.css"
 
 import Chart from "react-google-charts";
 
 
-const TotalSpending = () =>  {
+const AssetsChart = () =>  {
 
 
         return (
             <div className="total-spending-container">
-            <h3>Total Spending Chart</h3>
+            <h3>Assets Chart</h3>
                 <Chart
                     width={'500px'}
                     height={'300px'}
                     chartType="PieChart"
                     loader={<div>Loading Chart</div>}
                     data={[
-                        ['Expenses', 'Percentage'],
-                        ['Entertainment', 200],
-                        ['Groceries', 300],
-                        ['Car Note', 500],
-                        ['Rent', 1000],
+                        ['Assets', 'Percentage'],
+                        ['Checking', 200],
+                        ['Savings', 300],
+                        ['Investment', 500],
+                        ['Retirement', 1000],
                     ]}
                     options={{
                         legend: 'true',
@@ -37,4 +37,4 @@ const TotalSpending = () =>  {
 
         }
 
-export default TotalSpending;
+export default AssetsChart;

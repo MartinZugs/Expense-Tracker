@@ -39,7 +39,3 @@ a:link, a:visited, a:hover, a:active, a:focus{
   }
 
 }
-
-header, main, footer {
-  flex-shrink: 0;
-}
