@@ -11,8 +11,8 @@ const AssetsChart = () =>  {
             <div className="total-spending-container">
             <h3>Assets Chart</h3>
                 <Chart
-                    width={'500px'}
-                    height={'300px'}
+                    width={'450px'}
+                    height={'250px'}
                     chartType="PieChart"
                     loader={<div>Loading Chart</div>}
                     data={[
