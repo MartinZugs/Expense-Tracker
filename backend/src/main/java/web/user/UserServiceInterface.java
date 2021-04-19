@@ -2,5 +2,6 @@ package web.user;
 
 public interface UserServiceInterface {
 
-    User addUser(User user);
+    public User createUser(User user);
+    public User getUser (long user_id);
 }

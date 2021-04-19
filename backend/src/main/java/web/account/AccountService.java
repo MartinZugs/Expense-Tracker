@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class AccountService {
+public class AccountService implements AccountServiceInterface{
 
     private final List<Account> accounts = new LinkedList<>();
 

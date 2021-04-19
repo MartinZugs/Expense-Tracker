@@ -7,7 +7,7 @@ public class TransactionService implements TransactionServiceInterface {
 
     private final List<Transaction> transactions = new LinkedList<>();
 
-    public Transaction createTransaction (Transaction transaction, long account_id) {
+    public Transaction createTransaction (Transaction transaction) {
         transactions.add(transaction);
         return transaction;
     }

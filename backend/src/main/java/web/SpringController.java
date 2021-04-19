@@ -39,11 +39,11 @@ public class SpringController {
 
     /* ---------- Transaction API ----------- */
     @PutMapping(
-            value = "/transaction/new/{id}",
+            value = "/transaction/new/",
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public Transaction createTransaction(@RequestBody Transaction transaction, @PathVariable long account_id) {
-        return transaction_service.createTransaction(transaction, account_id);
+    public Transaction createTransaction(@RequestBody Transaction transaction) {
+        return transaction_service.createTransaction(transaction);
     }
 
 
