@@ -1,7 +1,7 @@
 import SecondNav from "./SecondNav";
 import './bills.css';
 import Billinfo from "./Billinfo";
-import BillCalendar from "./BillCalendar";
+import BillsDue from "./BillsDue";
 
 
 const Bills = () => {
@@ -14,7 +14,7 @@ const Bills = () => {
                     <Billinfo />
                 </div>
                 <div className="column2">
-                    <BillCalendar/>
+                    <BillsDue/>
                 </div>
             </div>
         </div>
