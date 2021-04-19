@@ -17,7 +17,7 @@ class NetWorth extends Component {
 
         for (let i = 0; i < TDs.length; i++) {
             let temp = TDs[i];
-            if (temp.firstChild.nodeValue.indexOf("-") == 0) {
+            if (temp.firstChild.nodeValue.indexOf("-") === 0) {
                 temp.className = "negative";
             } else {
                 temp.className = "positive";

@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import "./signIn.css"
 import {Link, useHistory} from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 
-export default function SignIn(props) {
+export default function SignIn() {
 
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -13,7 +13,11 @@ export default function SignIn(props) {
     const [, setLoading] = useState(false)
     const history = useHistory()
 
-    async function handleSubmit(e) {
+    useEffect(() => {
+    }, []);
+
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
       try {
@@ -25,7 +29,10 @@ export default function SignIn(props) {
             setError('Failed to sign in')
         }
         setLoading(false)
+
     }
+
+
 
         return (
 

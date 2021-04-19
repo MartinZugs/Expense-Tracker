@@ -10,8 +10,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { makeStyles } from '@material-ui/core/styles';
 
 
-
-
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
@@ -76,7 +74,6 @@ function BudgetInfo() {
 
                 { inputFields.map(inputField => (
                     <div key={inputField.id}>
-
                         <TextField
                             name="BillName"
                             label="Bill Name"
@@ -88,7 +85,6 @@ function BudgetInfo() {
                             value={inputField.BillName}
                             onChange={event => handleChangeInput(inputField.id, event)}
                         />
-
                         <TextField
                             name="Amount"
                             label="Amount"
@@ -100,7 +96,6 @@ function BudgetInfo() {
                             value={inputField.Amount}
                             onChange={event => handleChangeInput(inputField.id, event)}
                         />
-
                         <TextField
                             id="date"
                             name={"DueDate"}
