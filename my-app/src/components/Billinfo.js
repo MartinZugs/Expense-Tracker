@@ -8,13 +8,8 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import AddIcon from '@material-ui/icons/Add';
 import { v4 as uuidv4 } from 'uuid';
 import { makeStyles } from '@material-ui/core/styles';
-import 'date-fns';
-import DateFnsUtils from '@date-io/date-fns';
-import {
-    MuiPickersUtilsProvider,
-    KeyboardDatePicker,
-} from '@material-ui/pickers';
-import {lightGreen} from "@material-ui/core/colors";
+
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -32,13 +27,16 @@ const useStyles = makeStyles((theme) => ({
     },
     input1:{
         width:100,
+    },
+    input2:{
+        width:150,
     }
 }))
 
 function BudgetInfo() {
     const classes = useStyles()
     const [inputFields, setInputFields] = useState([
-        { id: uuidv4(),  BillName: '',  Amount:'' },
+        { id: uuidv4(),  BillName: '',  Amount:'', DueDate:'' },
     ]);
 
 
@@ -56,8 +54,8 @@ function BudgetInfo() {
         })
         setInputFields(newInputFields);
     }
-    const handleAddFields = (date) => {
-        setInputFields([...inputFields, { id: uuidv4(),  BillName: '', Amount:'' }])
+    const handleAddFields = () => {
+        setInputFields([...inputFields, { id: uuidv4(),  BillName: '', Amount:'', DueDate: '' }])
 
     }
 
@@ -67,11 +65,6 @@ function BudgetInfo() {
         setInputFields(values);
     }
 
-    const handleDateChange = (date) => {
-        setSelectedDate(date);
-    };
-    const [selectedDate, setSelectedDate] = React.useState(new Date('2021-01-01T21:11:54'));
-console.log(selectedDate);
 
     return (
         <Container className="bill-info-container">
@@ -105,21 +98,23 @@ console.log(selectedDate);
                             value={inputField.Amount}
                             onChange={event => handleChangeInput(inputField.id, event)}
                         />
-                        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                            <KeyboardDatePicker
-                                disableToolbar
-                                variant="inline"
-                                format="MM/dd/yyyy"
-                                margin="normal"
-                                id="date-picker-inline"
-                                label="Due Date"
-                                value={selectedDate}
-                                onChange={handleDateChange}
-                                KeyboardButtonProps={{
-                                    'aria-label': 'change date',
-                                }}
-                            />
-                        </MuiPickersUtilsProvider>
+
+                        <TextField
+                            id="date"
+                            name={"DueDate"}
+                            label="Due Date"
+                            type="date"
+                            defaultValue="2021-01-01"
+                            className={classes.DueDate}
+                            value={inputField.DueDate}
+                            InputProps={
+                                {className: classes.input2}
+                            }
+                            InputLabelProps={{
+                                shrink: true,
+                            }}
+                            onChange={event => handleChangeInput(inputField.id, event)}
+                        />
                         <IconButton disabled={inputFields.length === 1} onClick={() => handleRemoveFields(inputField.id)}>
                             <RemoveIcon />
                         </IconButton>
