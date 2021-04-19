@@ -30,6 +30,8 @@ const useStyles = makeStyles((theme) => ({
     },
     input2:{
         width:150,
+        color: "gray",
+
     }
 }))
 
@@ -104,7 +106,6 @@ function BudgetInfo() {
                             name={"DueDate"}
                             label="Due Date"
                             type="date"
-                            defaultValue="2021-01-01"
                             className={classes.DueDate}
                             value={inputField.DueDate}
                             InputProps={
