@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-function BudgetInfo() {
+const BudgetInfo = (  ) => {
     const classes = useStyles()
     const [inputFields, setInputFields] = useState([
         { id: uuidv4(),  BillName: '',  Amount:'', DueDate:'' },
@@ -128,7 +128,6 @@ function BudgetInfo() {
                     //contained
                     color="primary"
                     type="submit"
-
                     onClick={handleSubmit}
                 >Send</Button>
             </form>

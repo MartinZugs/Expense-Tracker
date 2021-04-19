@@ -3,8 +3,9 @@ import "./billsDue.css"
 const BillsDue = () => {
 
     return (
-        <div className="bill-calendar-container">
+        <div className="bills-due-container">
             <h3>Bills Due:</h3>
+
         </div>
     )
 }

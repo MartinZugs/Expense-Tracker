@@ -1,7 +1,11 @@
-.bill-calendar-container {
+.bills-due-container {
     padding: 30px;
 }
-.bill-calendar-container h3 {
+.bills-due-container h3 {
     color:#626567;
     text-transform: uppercase;
+}
+
+ul {
+    list-style-type: none;
 }
