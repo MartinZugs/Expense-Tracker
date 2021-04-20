@@ -25,7 +25,7 @@ public class SpringController {
             value = "/user/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
     public User getUser(@PathVariable long user_id){
-        return new User(user_id, "Max", "Mustermann", "max@mustermann.com");
+        return user_service.getUser(user_id);
     }
 
     @PutMapping(
