@@ -8,12 +8,14 @@ public class Bill {
     long id;
     Date due_date;
     long transaction_id;
+    String name;
 
-    public Bill(double value, long id, Date due_date, long transaction_id) {
+    public Bill(double value, long id, Date due_date, long transaction_id, String name) {
         this.value = value;
         this.id = id;
         this.due_date = due_date;
         this.transaction_id = transaction_id;
+        this.name = name;
     }
 
 	public double getValue() {
@@ -47,5 +49,13 @@ public class Bill {
 	public void setTransaction_id(long transaction_id) {
 		this.transaction_id = transaction_id;
 	}
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }
