@@ -8,9 +8,8 @@ public class AccountService implements AccountServiceInterface{
 
     private final List<Account> accounts = new LinkedList<>();
 
-    public Account createAccount (Account account) {
-        accounts.add(account);
-        return account;
+    public boolean createAccount (Account account) {
+        return accounts.add(account);
     }
 
     public Account getAccount (long account_id) {

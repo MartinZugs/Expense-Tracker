@@ -2,5 +2,6 @@ package web.transaction;
 
 public interface TransactionServiceInterface {
 
-    Transaction createTransaction(Transaction transaction);
+    public boolean createTransaction(Transaction transaction);
+    public Transaction getTransaction(long transaction_id);
 }

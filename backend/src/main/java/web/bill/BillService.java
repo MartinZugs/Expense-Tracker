@@ -7,8 +7,8 @@ public class BillService implements BillServiceInterface{
 
     List<Bill> bills = new LinkedList<Bill>();
 
-    public void createBill(Bill bill) {
-        bills.add(bill);
+    public boolean createBill(Bill bill) {
+        return bills.add(bill);
     }
 
     public Bill getBill(long bill_id) {

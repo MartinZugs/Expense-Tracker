@@ -7,9 +7,8 @@ public class UserService implements UserServiceInterface{
 
     private final List<User> users = new LinkedList<>();
 
-    public User createUser (User user) {
-        users.add(user);
-        return user;
+    public boolean createUser (User user) {
+        return users.add(user);
     }
 
     public User getUser (long user_id) {

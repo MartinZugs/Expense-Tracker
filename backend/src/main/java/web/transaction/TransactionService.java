@@ -7,8 +7,11 @@ public class TransactionService implements TransactionServiceInterface {
 
     private final List<Transaction> transactions = new LinkedList<>();
 
-    public Transaction createTransaction (Transaction transaction) {
-        transactions.add(transaction);
-        return transaction;
+    public boolean createTransaction(Transaction transaction) {
+        return transactions.add(transaction);
+    }
+
+    public Transaction getTransaction(long transaction_id) {
+        return transactions.stream().filter(tran -> transaction_id == tran.getId()).findFirst().orElse(null);
     }
 }
