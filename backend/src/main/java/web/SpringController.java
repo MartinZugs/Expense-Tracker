@@ -31,7 +31,22 @@ public class SpringController {
     }
 
     @GetMapping(
-            value = "/user/{id}",
+            value = "/user/{user_id}/{budget_id}",
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public Budget getBudget(@PathVariable long user_id, @PathVariable long budget_id){
+        return user_service.getBudget(user_id, budget_id);
+    }
+
+    /* ----------- Budget API (User Service) ---------- */
+    @PutMapping(
+            value = "/budget/new",
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public boolean createbudget(@RequestBody Budget budget) {
+        return user_service.createBudget(budget);
+    }
+
+    @GetMapping(
+            value = "/budget/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
     public User getUser(@PathVariable long user_id){
         return user_service.getUser(user_id);

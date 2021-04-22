@@ -1,6 +1,11 @@
 package web.user;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class User {
+
+    private List<Budget> budgets = new LinkedList<Budget>();
 
     long id;
     String first_name;
@@ -12,6 +17,10 @@ public class User {
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
+    }
+
+    public boolean createBudget(Budget budget) {
+        return budgets.add(budget);
     }
 
     /* ------ Getter & Setter ------ */
@@ -29,5 +38,9 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public List<Budget> getBudgets() {
+        return budgets;
     }
 }
