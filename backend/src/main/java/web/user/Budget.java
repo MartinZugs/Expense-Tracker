@@ -36,8 +36,15 @@ public class Budget {
         this.amount = amount;
     }
 
+    public void updateBudget(double value) {
+        this.used -= value;
+        if(this.used >= this.amount) {
+            // TODO: Implement message option to let user know budget is overdrawn
+        }
+    }
+
     /* ---------------- Getter & Setter ---------------- */
-    
+
     public long getId() {
         return id;
     }
