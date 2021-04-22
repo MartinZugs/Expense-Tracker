@@ -24,6 +24,10 @@ public class Account {
         this.type = AccountType.OTHER;
     }
 
+    public void updateBalance(double value) {
+        this.balance += value;
+    }
+
     /* ------ Getter & Setter ------ */
     public long getId() {
         return id;

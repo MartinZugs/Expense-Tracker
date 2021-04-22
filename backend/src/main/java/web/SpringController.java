@@ -43,7 +43,7 @@ public class SpringController {
             value = "/transaction/new/",
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public boolean createTransaction(@RequestBody Transaction transaction) {
-        return transaction_service.createTransaction(transaction);
+        return transaction_service.createTransaction(transaction, account_service);
     }
 
     @GetMapping(
