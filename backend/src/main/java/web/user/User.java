@@ -23,6 +23,10 @@ public class User {
         return budgets.add(budget);
     }
 
+    public boolean deleteBudget(Budget budget) {
+        return budgets.remove(budget);
+    }
+
     /* ------ Getter & Setter ------ */
     public long getId() {
         return id;

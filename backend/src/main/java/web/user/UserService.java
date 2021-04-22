@@ -25,4 +25,8 @@ public class UserService implements UserServiceInterface{
     public Budget getBudget(long user_id, long budget_id) {
         return getUser(user_id).getBudgets().stream().filter(bud -> bud.getId() == budget_id).findFirst().orElse(null);
     }
+
+    public boolean deleteBudget(long user_id, long budget_id) {
+        return getUser(user_id).deleteBudget(getBudget(user_id, budget_id));
+    }
 }

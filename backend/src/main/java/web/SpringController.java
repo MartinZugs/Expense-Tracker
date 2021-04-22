@@ -6,6 +6,7 @@ import web.transaction.*;
 import web.bill.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -31,10 +32,10 @@ public class SpringController {
     }
 
     @GetMapping(
-            value = "/user/{user_id}/{budget_id}",
+            value = "/user/{id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public Budget getBudget(@PathVariable long user_id, @PathVariable long budget_id){
-        return user_service.getBudget(user_id, budget_id);
+    public User getUser(@PathVariable long user_id){
+        return user_service.getUser(user_id);
     }
 
     /* ----------- Budget API (User Service) ---------- */
@@ -46,10 +47,15 @@ public class SpringController {
     }
 
     @GetMapping(
-            value = "/budget/{id}",
+            value = "/budget/{user_id}/{budget_id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public User getUser(@PathVariable long user_id){
-        return user_service.getUser(user_id);
+    public Budget getBudget(@PathVariable long user_id, @PathVariable long budget_id){
+        return user_service.getBudget(user_id, budget_id);
+    }
+
+    @DeleteMapping(value = "/budget/delete/{user_id}/{budget_id}")
+    public boolean deleteBudget(@PathVariable long user_id, @PathVariable long budget_id) {
+        return user_service.deleteBudget(user_id, budget_id);
     }
 
 
