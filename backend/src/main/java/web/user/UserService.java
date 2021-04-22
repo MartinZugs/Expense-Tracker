@@ -43,4 +43,8 @@ public class UserService implements UserServiceInterface{
     public boolean deleteLoan(long user_id, long loan_id) {
         return getUser(user_id).deleteLoan(getLoan(user_id, loan_id));
     }
+
+    public double updateLoan(long user_id, long loan_id, double value) {
+        return getLoan(user_id, loan_id).update(value);
+    }
 }

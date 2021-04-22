@@ -23,6 +23,14 @@ public class Loan {
         this.name = name;
     }
 
+    public double update(double value) {
+        this.paid_off += value;
+        if(this.paid_off >= this.amount) {
+            // TODO: Implement message option to let user know budget is overdrawn
+        }
+        return (this.amount - this.paid_off);
+    }
+
     /* ------------ Getter & Setter ----------- */
     public long getId() {
         return id;

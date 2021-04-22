@@ -78,6 +78,10 @@ public class SpringController {
         return user_service.deleteLoan(user_id, loan_id);
     }
 
+    @GetMapping(value = "/loan/update/{user_id}/{loan_id}/{update_amount}")
+    public double updateLoan(@PathVariable long user_id, @PathVariable long loan_id, @PathVariable double update_amount) {
+        return user_service.updateLoan(user_id, loan_id, update_amount);
+    }
 
     /* ---------- Transaction API ----------- */
     @PutMapping(
