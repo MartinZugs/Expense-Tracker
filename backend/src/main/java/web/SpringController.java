@@ -42,7 +42,7 @@ public class SpringController {
     @PutMapping(
             value = "/budget/new",
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public boolean createbudget(@RequestBody Budget budget) {
+    public boolean createBudget(@RequestBody Budget budget) {
         return user_service.createBudget(budget);
     }
 
@@ -56,6 +56,26 @@ public class SpringController {
     @DeleteMapping(value = "/budget/delete/{user_id}/{budget_id}")
     public boolean deleteBudget(@PathVariable long user_id, @PathVariable long budget_id) {
         return user_service.deleteBudget(user_id, budget_id);
+    }
+
+    /* -------------- Loan API (User Service) ----------- */
+    @PutMapping(
+            value = "/loan/new",
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public boolean createLoan(@RequestBody Loan loan) {
+        return user_service.createLoan(loan);
+    }
+
+    @GetMapping(
+            value = "/loan/{user_id}/{loan_id}",
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public Loan getLoan(@PathVariable long user_id, @PathVariable long loan_id){
+        return user_service.getLoan(user_id, loan_id);
+    }
+
+    @DeleteMapping(value = "/loan/delete/{user_id}/{loan_id}")
+    public boolean deleteLoan(@PathVariable long user_id, @PathVariable long loan_id) {
+        return user_service.deleteLoan(user_id, loan_id);
     }
 
 

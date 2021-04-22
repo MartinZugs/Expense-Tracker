@@ -29,4 +29,18 @@ public class UserService implements UserServiceInterface{
     public boolean deleteBudget(long user_id, long budget_id) {
         return getUser(user_id).deleteBudget(getBudget(user_id, budget_id));
     }
+
+    /* ------- Loan methods ------- */
+
+    public boolean createLoan(Loan loan) {
+        return getUser(loan.getUser_id()).createLoan(loan);
+    }
+
+    public Loan getLoan(long user_id, long loan_id) {
+        return getUser(user_id).getLoans().stream().filter(loan -> loan.getId() == loan_id).findFirst().orElse(null);
+    }
+
+    public boolean deleteLoan(long user_id, long loan_id) {
+        return getUser(user_id).deleteLoan(getLoan(user_id, loan_id));
+    }
 }

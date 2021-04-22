@@ -6,6 +6,7 @@ import java.util.List;
 public class User {
 
     private List<Budget> budgets = new LinkedList<Budget>();
+    private List<Loan> loans = new LinkedList<Loan>();
 
     long id;
     String first_name;
@@ -27,6 +28,14 @@ public class User {
         return budgets.remove(budget);
     }
 
+    public boolean createLoan(Loan loan) {
+        return loans.add(loan);
+    }
+
+    public boolean deleteLoan(Loan loan) {
+        return loans.remove(loan);
+    }
+
     /* ------ Getter & Setter ------ */
     public long getId() {
         return id;
@@ -46,5 +55,13 @@ public class User {
 
     public List<Budget> getBudgets() {
         return budgets;
+    }
+
+    public List<Loan> getLoans() {
+        return loans;
+    }
+
+    public void setLoans(List<Loan> loans) {
+        this.loans = loans;
     }
 }
