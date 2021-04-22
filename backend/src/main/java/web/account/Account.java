@@ -28,24 +28,44 @@ public class Account {
         this.balance += value;
     }
 
-    /* ------ Getter & Setter ------ */
+    /* ------------- Getter & Setter --------- */
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public AccountType getType() {
         return type;
+    }
+
+    public void setType(AccountType type) {
+        this.type = type;
     }
 
     public long getUser_id() {
         return user_id;
     }
 
+    public void setUser_id(long user_id) {
+        this.user_id = user_id;
+    }
+
     public double getBalance() {
         return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }

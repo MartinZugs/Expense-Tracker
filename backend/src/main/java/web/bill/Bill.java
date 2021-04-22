@@ -18,6 +18,7 @@ public class Bill {
         this.name = name;
     }
 
+	/* -------- Getter & Setter ------- */
 	public double getValue() {
 		return this.value;
 	}

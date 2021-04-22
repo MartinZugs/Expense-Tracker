@@ -108,6 +108,4 @@ public class Budget {
     public void setUsed(double used) {
         this.used = used;
     }
-    
-    
 }
