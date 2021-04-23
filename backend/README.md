@@ -52,57 +52,34 @@ During the build, the project will run automated tests that can be found in src/
 
 ## Example requests
 
-Use these example requests in your preferred REST API testing tool or simply in your browser's address bar.
+Use these example requests in your preferred REST API testing tool (e.g. postman or RESTler) or simply in your browser's address bar.
 
 
-
-
-
-FOLLOWING NEEDS TO BE UPDATED:
 
 ### Create new User:
 
-**Type:** GET
-
-**URL:** localhost:8080/newUser
-
-
-
-### Request user point balance
-
-**Type:** GET
-
-**URL:** localhost:8080/balance?user=0
-
-
-
-### Request list of points per payer:
-
-**Type:** GET
-
-**URL:** localhost:8080/payer_list?user=0
-
-
-
-### Add Transaction
-
 **Type:** POST
 
-**URL:** localhost:8080/transaction/0
+**Returns: **true/false
 
-**Body:**
+**URL:** localhost:8080/user/new
+
+**Body:** 
 
 {
-	"payer_name" : "DANNON",
-	"points" : "300",
-	"date" : "2021-30-01T17:08:48"
+    "id" : "1",
+    "first_name" : "Max",
+    "last_name" : "Smith",
+    "email" : "max.smith@online.com"
 }
 
 
 
-### Make payment
+### Request user
 
 **Type:** GET
 
-**URL:** localhost:8080/pay?amount=100&user=0
+**Returns:** User
+
+**URL:** localhost:8080/user/1
 
