@@ -2,7 +2,9 @@ package web.account;
 
 public enum AccountType {
 
-    INDIVIDUAL,
-    BUSINESS,
-    OTHER
+    CHECKINGS,
+    SAVINGS,
+    CREDIT,
+    DEBIT,
+    OTHER,
 }

@@ -1,13 +1,27 @@
-.budget-container {
-    display: flex;
+.budget-page-wrapper {
+    display:flex;
     flex-direction: column;
     margin: 0;
-    align-content: flex-start;
-    width: 100%;
+}
+
+.row{
+    display: flex;
+    margin: 0;
+    flex-grow: 1;
 
 }
-.content {
-    display: flex;
-    height: 70.5vh;
+
+.column1 {
+    flex: 50%;
+    margin: 0;
+    flex-grow: 1;
+    padding: 30px;
+}
+.column2 {
+    padding: 30px;
+    flex: 50%;
+    margin: 0;
+    flex-grow: 1;
+
 
 }

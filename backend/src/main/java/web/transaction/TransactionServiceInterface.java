@@ -1,8 +1,10 @@
 package web.transaction;
 
-import web.transaction.Transaction;
+import web.account.*;
+import web.user.UserService;
 
 public interface TransactionServiceInterface {
 
-    Transaction createTransaction(Transaction transaction, long account_id);
+    public boolean createTransaction(Transaction transaction, AccountService account_service, UserService user_service);
+    public Transaction getTransaction(long transaction_id);
 }

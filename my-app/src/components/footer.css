@@ -2,9 +2,11 @@
 
 .footer {
     display: flex;
-    height: 20vh;
+    flex-direction: row;
+    height: 30vh;
     background-color: #F8F9F9;
     margin: 0;
+
 
 }
 @media (max-width: 800px) {

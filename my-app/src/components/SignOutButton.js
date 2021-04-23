@@ -6,7 +6,7 @@ import React, {useState} from "react";
 const SignOutButton = () => {
 
     const [error, setError] = useState("")
-    const { currentUser, logout } = useAuth()
+    const { logout } = useAuth()
     const history = useHistory()
     async function handleLogout(){
         setError('')
