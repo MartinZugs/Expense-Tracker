@@ -17,9 +17,15 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.22'
+	implementation 'org.json:json:20171018'
 }
 
 test {
 	useJUnitPlatform()
 }
 
+allprojects { 
+    tasks.withType(JavaCompile) { 
+        options.deprecation = true
+    }
+}

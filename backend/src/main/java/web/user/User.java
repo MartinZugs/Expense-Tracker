@@ -9,14 +9,12 @@ public class User {
     private List<Loan> loans = new LinkedList<Loan>();
 
     long id;
-    String first_name;
-    String last_name;
+    String name;
     String email;
 
-    public User(long id, String first_name, String last_name, String email) {
+    public User(long id, String name, String email) {
         this.id = id;
-        this.first_name = first_name;
-        this.last_name = last_name;
+        this.name = name;
         this.email = email;
     }
 
@@ -41,12 +39,8 @@ public class User {
         return id;
     }
 
-    public String getFirst_name() {
-        return first_name;
-    }
-
-    public String getLast_name() {
-        return last_name;
+    public String getName() {
+        return name;
     }
 
     public String getEmail() {

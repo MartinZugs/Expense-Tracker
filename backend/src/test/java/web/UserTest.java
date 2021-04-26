@@ -11,8 +11,8 @@ import web.user.UserService;
 
 public class UserTest {
 
-    User user_1 = new User(1, "Max", "Smith", "max.smith@online.com");
-    User user_2 = new User(2, "John", "Richards", "jr@online.com");
+    User user_1 = new User(1, "Max Smith", "max.smith@online.com");
+    User user_2 = new User(2, "John Richards", "jr@online.com");
     UserService user_service = new UserService();
 
     @Test

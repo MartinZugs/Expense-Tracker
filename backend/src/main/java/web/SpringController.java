@@ -4,6 +4,7 @@ import web.account.*;
 import web.user.*;
 import web.transaction.*;
 import web.bill.*;
+// import web.database.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,26 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-/* public class ConnectToDatabase {
-   public static void main(String[] args) {
-      String MySQLURL = "jdbc:mysql://localhost:3306/web?useSSL=false";
-      String databseUserName = "root";
-      String databasePassword = "123456";
-      Connection con = null;
-      try {
-         con = DriverManager.getConnection(MySQLURL, databseUserName, databasePassword);
-         if (con != null) {
-            System.out.println("Database connection is successful !!!!");
-         }
-      } catch (Exception e) {
-         e.printStackTrace();
-      }
-   }
-} */
-
 
 @RestController
 public class SpringController {
@@ -40,6 +21,7 @@ public class SpringController {
     AccountService account_service = new AccountService();
     TransactionService transaction_service = new TransactionService();
     BillService bill_service = new BillService();
+    // DatabaseController database_controller = new DatabaseController();
 
 
     /* ---------- User API ----------- */
@@ -47,18 +29,6 @@ public class SpringController {
             value = "/user/new",
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public boolean createUser(@RequestBody User user) {
-        String MySQLURL = "jdbc:mysql://localhost:3306/test?useSSL=false";
-        String databseUserName = "root";
-        String databasePassword = "";
-        Connection con = null;
-        try {
-            con = DriverManager.getConnection(MySQLURL, databseUserName, databasePassword);
-            if (con != null) {
-                System.out.println("Database connection is successful !!!!");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         return user_service.createUser(user);
     }
 

@@ -2,13 +2,16 @@ package web.user;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.sql.*;
 
 public class UserService implements UserServiceInterface{
 
     private final List<User> users = new LinkedList<>();
+    // DatabaseController database_controller = new DatabaseController();
 
     /* ------- User methods ------- */
     public boolean createUser (User user) {
+        // ResultSet result = database_controller.execute_query("INSERT INTO User (name, email) VALUES (" + user.getName() + "," + user.getEmail() + ");");
         return users.add(user);
     }
 
