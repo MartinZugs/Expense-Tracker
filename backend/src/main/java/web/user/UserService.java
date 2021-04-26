@@ -1,5 +1,6 @@
 package web.user;
 
+import web.account.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.sql.*;
@@ -17,6 +18,20 @@ public class UserService implements UserServiceInterface{
 
     public User getUser (long user_id) {
         return users.stream().filter(usr -> usr.getId() == user_id).findFirst().orElse(null);
+    }
+
+    public double getDebt(long user_id, AccountService account_service) {
+        double debt = 0;
+        User usr = getUser(user_id);
+        for(Loan loan : usr.getLoans()) {
+            debt += (loan.getAmount() - loan.getPaid_off());
+        }
+        for(Account account : account_service.getAccounts(user_id)) {
+            if(account.getType().equals(AccountType.CREDIT)) {
+                debt += account.getBalance();
+            }
+        }
+        return debt;
     }
 
     /* ------- Budget methods ------- */

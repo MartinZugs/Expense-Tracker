@@ -39,6 +39,11 @@ public class SpringController {
         return user_service.getUser(user_id);
     }
 
+    @GetMapping(value = "/user/{id}/assets")
+        public double getDebt(@PathVariable long user_id){
+        return user_service.getDebt(user_id, account_service);
+    }
+
     /* ----------- Budget API (User Service) ---------- */
     @PutMapping(
             value = "/budget/new",
