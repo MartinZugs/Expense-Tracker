@@ -1,9 +1,11 @@
 package web.user;
 
-import web.account.*;
 import java.util.LinkedList;
 import java.util.List;
-import java.sql.*;
+
+import web.account.Account;
+import web.account.AccountService;
+import web.account.AccountType;
 
 public class UserService implements UserServiceInterface{
 
