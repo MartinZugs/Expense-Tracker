@@ -20,33 +20,6 @@ public class Transaction {
         this.account_id = account_id;
     }
 
-    public Transaction(Date date, long id, double value, boolean isBill, long account_id) {
-        this.date = date;
-        this.id = id;
-        this.value = value;
-        this.category = TransactionCategory.OTHER;
-        this.isBill = isBill;
-        this.account_id = account_id;
-    }
-
-    public Transaction(long id, double value, TransactionCategory category, boolean isBill, long account_id) {
-        this.date = new Date();
-        this.id = id;
-        this.value = value;
-        this.category = category;
-        this.isBill = isBill;
-        this.account_id = account_id;
-    }
-
-    public Transaction(long id, double value, boolean isBill, long account_id) {
-        this.date = new Date();
-        this.id = id;
-        this.value = value;
-        this.category = TransactionCategory.OTHER;
-        this.isBill = isBill;
-        this.account_id = account_id;
-    }
-
     /* ------- Getter & Setter ----- */
     public Date getDate() {
         return date;
