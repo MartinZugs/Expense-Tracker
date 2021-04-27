@@ -4,7 +4,7 @@ import web.account.*;
 import web.user.*;
 import web.transaction.*;
 import web.bill.*;
-// import web.database.*;
+import web.database.*;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,7 +21,7 @@ public class SpringController {
     AccountService account_service = new AccountService();
     TransactionService transaction_service = new TransactionService();
     BillService bill_service = new BillService();
-    // DatabaseController database_controller = new DatabaseController();
+    DatabaseController database_controller = new DatabaseController("expesne_tracker");
 
 
     /* ---------- User API ----------- */

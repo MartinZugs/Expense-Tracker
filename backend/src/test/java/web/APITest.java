@@ -48,7 +48,7 @@ public class APITest {
         assertTrue(account_service.createAccount(user_1_acc2));
         assertTrue(account_service.createAccount(user_1_acc3));
         assertTrue(transaction_service.createTransaction(user_1_trans1, account_service, user_service));
-        assertTrue(transaction_service.createTransaction(user_1_trans1, account_service, user_service));
+        assertTrue(transaction_service.createTransaction(user_1_trans2, account_service, user_service));
         assertTrue(user_service.createLoan(user_1_loan1));
         assertTrue(user_service.createLoan(user_1_loan2));
         assertEquals(user_service.getUser(1), user_1);
