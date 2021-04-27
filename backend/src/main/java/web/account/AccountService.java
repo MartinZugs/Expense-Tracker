@@ -3,12 +3,19 @@ package web.account;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.sql.*;
+import web.database.*;
 
 public class AccountService implements AccountServiceInterface{
 
     private final List<Account> accounts = new LinkedList<>();
+    DatabaseController database_controller = new DatabaseController("expense_tracker");
 
     public boolean createAccount (Account account) {
+        database_controller.open_connection();
+        int affected_rows = database_controller.execute_update("INSERT INTO Account (name, type, balance, user_id) VALUES ('" + account.getName() + "','" + account.getType() + "','" + account.getBalance() + "','" + account.getUser_id() + "');");
+        System.out.println(affected_rows);
+        database_controller.close_connection();
         return accounts.add(account);
     }
 

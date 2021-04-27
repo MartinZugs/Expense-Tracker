@@ -10,18 +10,6 @@ public class Transaction {
     TransactionCategory category;
     boolean isBill;
     long account_id;
-    long budget_id = 0;
-
-    public Transaction(Date date, long id, double value, TransactionCategory category, boolean isBill, long account_id,
-            long budget_id) {
-        this.date = date;
-        this.id = id;
-        this.value = value;
-        this.category = category;
-        this.isBill = isBill;
-        this.account_id = account_id;
-        this.budget_id = budget_id;
-    }
 
     public Transaction(Date date, long id, double value, TransactionCategory category, boolean isBill, long account_id) {
         this.date = date;
@@ -108,11 +96,4 @@ public class Transaction {
         this.account_id = account_id;
     }
 
-    public long getBudget_id() {
-        return budget_id;
-    }
-
-    public void setBudget_id(long budget_id) {
-        this.budget_id = budget_id;
-    }
 }
