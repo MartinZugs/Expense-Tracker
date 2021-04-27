@@ -56,9 +56,15 @@ Use these example requests in your preferred REST API testing tool (e.g. postman
 
 The developers recommend using the commands in the given order to satisfy all dependencies.
 
+**Required HTTP header:**
+
+> ​	Content-Type: application/json
 
 
-### Create new User:
+
+
+
+### 1. Create new User:
 
 **Type:** PUT
 
@@ -70,15 +76,15 @@ The developers recommend using the commands in the given order to satisfy all de
 
 **Body:** 
 
-{
-    "id" : "1",
-    "name" : "Max Smith",
-    "email" : "max.smith@online.com"
-}
+	{
+		"id" : "1",
+		"name" : "Max Smith",
+		"email" : "max.smith@online.com"
+	}
 
 
 
-### Request User
+### 2. Request User
 
 **Type:** GET
 
@@ -92,7 +98,7 @@ The developers recommend using the commands in the given order to satisfy all de
 
 
 
-### Create new Account linked to existing user:
+### 3. Create new Account linked to existing user:
 
 **Type:** PUT
 
@@ -106,33 +112,25 @@ The developers recommend using the commands in the given order to satisfy all de
 
 *Example 1:*
 
-{
- 	"id" : "1",
-
-  	"name" : "Chase Checking",
-
-  	"user_id" : "1",
-
-  	"balance" : "524,20"
-
-}
+	{
+		"id" : "1",
+		"name" : "Chase Checking",
+		"user_id" : "1",
+		"balance" : "524,20"
+	}
 
 *Example 2:*
 
-{
- 	"id" : "2",
-
-  	"name" : "Chase Savings",
-
-  	"user_id" : "1",
-
-  	"balance" : "5398,00"
-
-}
+	{
+		"id" : "2",
+		"name" : "Chase Savings",
+		"user_id" : "1",
+		"balance" : "5398,00"
+	}
 
 
 
-### Request Account
+### 4. Request Account
 
 **Type:** GET
 
@@ -148,7 +146,7 @@ The developers recommend using the commands in the given order to satisfy all de
 
 
 
-### Create new Transaction linked to existing account:
+### 5. Create new Transaction linked to existing account:
 
 **Type:** PUT
 
@@ -162,38 +160,27 @@ The developers recommend using the commands in the given order to satisfy all de
 
 *Example 1:*
 
-{
-
-​	"date" : "2021-27-04T10:00:00",
-
- 	"id" : "1",
-
-​	"value" : "200.00",
-
-​	"isBill" : "false",
-
-​	"account_id" : "1"
-
-}
+	{
+		"date" : "2021-27-04T10:00:00",
+		"id" : "1",
+		"value" : "200.00",
+		"isBill" : "false",
+		"account_id" : "1"
+	}
 
 *Example 2:*
 
-{
- 	"date" : "2021-27-04T11:00:00",
-
- 	"id" : "2",
-
-​	"value" : "53,00",
-
-​	"isBill" : "false",
-
-​	"account_id" : "1"
-
-}
+	{
+		"date" : "2021-27-04T11:00:00",
+		"id" : "2",
+		"value" : "53,00",
+		"isBill" : "false",
+		"account_id" : "1"
+	}
 
 
 
-### Request Transaction
+### 6. Request Transaction
 
 **Type:** GET
 
@@ -209,7 +196,7 @@ The developers recommend using the commands in the given order to satisfy all de
 
 
 
-### Create new Loan linked to existing user:
+### 7. Create new Loan linked to existing user:
 
 **Type:** PUT
 
@@ -223,46 +210,31 @@ The developers recommend using the commands in the given order to satisfy all de
 
 *Example 1:*
 
-{
-
-​	"id" : "1",
-
-​	"user_id" : "1",
-
-​	"amount" : "5500.00",
-
-​	"paid_off" : "500.00",
-
-​	"creation_date" : "2021-05-01T15:35:00"
-
-​	"interest_rate" : "1.5",
-
-​	"name" : "2010 Mercedes"
-
-}
+	{
+		"id" : "1",
+		"user_id" : "1",
+		"amount" : "5500.00",
+		"paid_off" : "500.00",
+		"creation_date" : "2021-05-01T15:35:00"
+		"interest_rate" : "1.5",
+		"name" : "2010 Mercedes"
+	}
 
 *Example 2:*
 
-{
- 	"id" : "2",
-
-​	"user_id" : "1",
-
-​	"amount" : "80000.00",
-
-​	"paid_off" : "34000.00",
-
-​	"creation_date" : "2019-01-01T12:00:00"
-
-​	"interest_rate" : "0.8",
-
-​	"name" : "Chicago apartment"
-
-}
+	{
+		"id" : "2",
+		"user_id" : "1",
+		"amount" : "80000.00",
+		"paid_off" : "34000.00",
+		"creation_date" : "2019-01-01T12:00:00"
+		"interest_rate" : "0.8",
+		"name" : "Chicago apartment"
+	}
 
 
 
-### Request Loan
+### 8. Request Loan
 
 **Type:** GET
 
@@ -278,7 +250,7 @@ The developers recommend using the commands in the given order to satisfy all de
 
 
 
-### Request Debt
+### 9. Request Debt
 
 **Type:** GET
 
@@ -292,7 +264,7 @@ The developers recommend using the commands in the given order to satisfy all de
 
 
 
-### Request Assets
+### 10. Request Assets
 
 **Type:** GET
 
