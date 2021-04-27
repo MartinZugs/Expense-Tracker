@@ -36,7 +36,7 @@ public class SpringController {
         return user_service.getUser(user_id);
     }
 
-    @GetMapping(value = "/user/{id}/assets")
+    @GetMapping(value = "/user/{id}/debts")
         public double getDebt(@PathVariable long user_id){
         return user_service.getDebt(user_id, account_service);
     }
