@@ -1,16 +1,16 @@
 package web.user;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 import web.account.Account;
 import web.account.AccountService;
 import web.account.AccountType;
-import web.database.*;
+import web.database.DatabaseController;
 
 public class UserService implements UserServiceInterface{
 
-    private final List<User> users = new LinkedList<>();
+    private final List<User> users = new ArrayList<>();
     DatabaseController database_controller = new DatabaseController("expense_tracker");
     User return_user;
     long id;

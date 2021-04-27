@@ -1,16 +1,16 @@
 package web.transaction;
 
-import web.account.*;
-import web.user.UserService;
-
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
-import web.database.*;
+import web.account.Account;
+import web.account.AccountService;
+import web.database.DatabaseController;
+import web.user.UserService;
 
 public class TransactionService implements TransactionServiceInterface {
 
-    private final List<Transaction> transactions = new LinkedList<>();
+    private final List<Transaction> transactions = new ArrayList<>();
     DatabaseController database_controller = new DatabaseController("expense_tracker");
 
     public boolean createTransaction(Transaction transaction, AccountService account_service, UserService user_service) {

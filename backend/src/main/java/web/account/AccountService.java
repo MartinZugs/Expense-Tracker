@@ -1,13 +1,14 @@
 package web.account;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import web.database.*;
+
+import web.database.DatabaseController;
 
 public class AccountService implements AccountServiceInterface{
 
-    private final List<Account> accounts = new LinkedList<>();
+    private final List<Account> accounts = new ArrayList<>();
     DatabaseController database_controller = new DatabaseController("expense_tracker");
     long id;
     String name;

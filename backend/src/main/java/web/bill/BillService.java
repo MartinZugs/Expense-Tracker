@@ -1,12 +1,13 @@
 package web.bill;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
-import web.database.*;
+
+import web.database.DatabaseController;
 
 public class BillService implements BillServiceInterface{
 
-    List<Bill> bills = new LinkedList<Bill>();
+    List<Bill> bills = new ArrayList<Bill>();
     DatabaseController database_controller = new DatabaseController("expense_tracker");
 
     public boolean createBill(Bill bill) {

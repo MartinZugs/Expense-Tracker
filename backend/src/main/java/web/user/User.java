@@ -1,12 +1,12 @@
 package web.user;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
 
-    private List<Budget> budgets = new LinkedList<Budget>();
-    private List<Loan> loans = new LinkedList<Loan>();
+    private List<Budget> budgets = new ArrayList<Budget>();
+    private List<Loan> loans = new ArrayList<Loan>();
 
     long id;
     String name;
