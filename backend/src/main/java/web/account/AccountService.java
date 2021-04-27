@@ -3,7 +3,6 @@ package web.account;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.sql.*;
 import web.database.*;
 
 public class AccountService implements AccountServiceInterface{
