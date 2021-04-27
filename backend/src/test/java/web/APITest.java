@@ -29,8 +29,8 @@ public class APITest {
     Account user_1_acc1 = new Account(1, "Chase Checking", AccountType.CHECKINGS, 1, 0.00);
     Account user_1_acc2 = new Account(2, "Chase Savings", AccountType.SAVINGS, 1, 100.00);
     Account user_1_acc3 = new Account(3, "Chase Credit Card", AccountType.CREDIT, 1, 50.00);
-    Transaction user_1_trans1 = new Transaction(1, 200.00, TransactionCategory.HOUSING, false, 1);
-    Transaction user_1_trans2 = new Transaction(2, 50.00, TransactionCategory.FOOD, false, 3);
+    Transaction user_1_trans1 = new Transaction(new Date(), 1, 200.00, TransactionCategory.HOUSING, false, 1);
+    Transaction user_1_trans2 = new Transaction(new Date(), 2, 50.00, TransactionCategory.FOOD, false, 1);
     Loan user_1_loan1 = new Loan(1, 1, 5000.00, 1500.00, new Date(), 1.5, "2010 Mercedes");
     Loan user_1_loan2 = new Loan(2, 1, 100000.00, 6000.00, new Date(), 0.8, "Chicago Apartment");
 
@@ -38,7 +38,7 @@ public class APITest {
 
     User user_2 = new User(2, "John Richards", "jr@online.com");
     Account user_2_acc = new Account(4, "Bank of America Checking", AccountType.CHECKINGS, 2, 200.00);
-    Transaction user_2_trans = new Transaction(3, -35.20, TransactionCategory.OTHER, false, 4);
+    Transaction user_2_trans = new Transaction(new Date(), 3, -35.20, TransactionCategory.OTHER, false, 4);
     Loan user_2_loan = new Loan(3, 2, 12500.00, 11500.00, new Date(), 0.5, "Kitchen");
 
     @Test

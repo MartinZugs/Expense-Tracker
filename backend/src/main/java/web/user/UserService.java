@@ -13,6 +13,10 @@ public class UserService implements UserServiceInterface{
 
     private final List<User> users = new LinkedList<>();
     DatabaseController database_controller = new DatabaseController("expense_tracker");
+    User return_user;
+    long id;
+    String name;
+    String email;
 
     /* ------- User methods ------- */
     public boolean createUser (User user) {
@@ -25,6 +29,19 @@ public class UserService implements UserServiceInterface{
     }
 
     public User getUser (long user_id) {
+        /*try{
+        database_controller.open_connection();
+        ResultSet result = database_controller.execute_query("SELECT * FROM User WHERE user_id = " + String.valueOf(user_id) + ";");
+        while (result.next()) {
+                this.id = result.getInt("user_id");
+                this.name = result.getString("name");
+                this.email = result.getString("email");
+                System.out.println(this.id + "," + this.name + "," + this.email);
+            }
+        database_controller.close_connection();
+        }
+        catch (Exception e){e.printStackTrace();}
+        return new User(this.id, this.name, this.email);*/
         return users.stream().filter(usr -> usr.getId() == user_id).findFirst().orElse(null);
     }
 

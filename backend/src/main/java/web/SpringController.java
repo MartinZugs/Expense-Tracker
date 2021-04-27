@@ -32,7 +32,7 @@ public class SpringController {
     }
 
     @GetMapping(
-            value = "/user/{id}",
+            value = "/user/{user_id}",
             produces = MediaType.APPLICATION_JSON_VALUE)
     public User getUser(@PathVariable long user_id){
         return user_service.getUser(user_id);
@@ -90,7 +90,7 @@ public class SpringController {
 
     /* ---------- Transaction API ----------- */
     @PutMapping(
-            value = "/transaction/new/",
+            value = "/transaction/new",
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public boolean createTransaction(@RequestBody Transaction transaction) {
         return transaction_service.createTransaction(transaction, account_service, user_service);

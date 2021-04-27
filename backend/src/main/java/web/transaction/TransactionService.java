@@ -15,8 +15,12 @@ public class TransactionService implements TransactionServiceInterface {
     DatabaseController database_controller = new DatabaseController("expense_tracker");
 
     public boolean createTransaction(Transaction transaction, AccountService account_service, UserService user_service) {
+        // Convert to a SQL date 
+        java.sql.Date sqlDate = new java.sql.Date(transaction.getDate().getTime());
+        // Convert the boolean to a usable format for SQL
+        int is_bill = (transaction.isBill()) ? 1 : 0;
         database_controller.open_connection();
-        int affected_rows = database_controller.execute_update("INSERT INTO Transaction (date, value, category, isBill, account_id) VALUES ('" + transaction.getDate() + "','" + transaction.getValue() + "','" + transaction.getCategory() + "','" + transaction.isBill() + "','" + transaction.getAccount_id() + ");");
+        int affected_rows = database_controller.execute_update("INSERT INTO Transaction (date, value, category, isBill, account_id) VALUES ('" + sqlDate + "','" + transaction.getValue() + "','" + transaction.getCategory() + "','" + is_bill + "','" + transaction.getAccount_id() + "');");
         System.out.println(affected_rows);
         database_controller.close_connection();
         // update balance for account associated with transaction
