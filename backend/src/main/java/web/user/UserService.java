@@ -16,7 +16,11 @@ public class UserService implements UserServiceInterface{
 
     /* ------- User methods ------- */
     public boolean createUser (User user) {
-        //ResultSet result = database_controller.execute_query("INSERT INTO User (name, email) VALUES (" + user.getName() + "," + user.getEmail() + ");");
+        database_controller.open_connection();
+        int affected_rows = database_controller.execute_update("INSERT INTO User (name, email) VALUES ('" + user.getName() + "','" + user.getEmail() + "');");
+        System.out.println(affected_rows);
+        database_controller.close_connection();
+
         return users.add(user);
     }
 

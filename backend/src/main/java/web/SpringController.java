@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
+import java.sql.*;
 
 @RestController
 public class SpringController {
@@ -21,8 +22,6 @@ public class SpringController {
     AccountService account_service = new AccountService();
     TransactionService transaction_service = new TransactionService();
     BillService bill_service = new BillService();
-    DatabaseController database_controller = new DatabaseController("expesne_tracker");
-
 
     /* ---------- User API ----------- */
     @PutMapping(

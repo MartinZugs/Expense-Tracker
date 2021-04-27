@@ -10,6 +10,7 @@ public class DatabaseController
     String database_name;
     Statement stmt;
     ResultSet rset;
+    int affected_rows;
 
     public DatabaseController(String database_name) 
     {
@@ -17,38 +18,60 @@ public class DatabaseController
     }
 
 
-  public void set_up_database () 
-  {
-      
-      try {
-        Class.forName("com.mysql.jdbc.Driver");
-      } catch(ClassNotFoundException ex) {
-        System.err.println("Unable to load MySQL Driver");
-      }
+
+  public void open_connection () {
 
     try {
-    String jdbcUrl = "jdbc:mysql://localhost/expense_tracker";
-    Connection con = DriverManager.getConnection(jdbcUrl, "root", "");}
-    catch (Exception e) {
-          e.printStackTrace();
-      }
+      this.jdbcUrl = "jdbc:mysql://104.211.50.118/" + this.database_name;
+      this.con = DriverManager.getConnection(this.jdbcUrl, "remote_user", "ZLc7PK2Ftb4k9t1P5wlp!");
+    }
 
+    catch (Exception e)
+    {
+      e.printStackTrace();
+    }
 
   }
-    
+
+  public void close_connection () {
+
+    try{
+      this.con.close();
+    }
+    catch (Exception e)
+    {
+      e.printStackTrace();
+    }
+
+  }
+
   public ResultSet execute_query (String query)
   {
+
       try{
-      Statement stmt = con.createStatement();
-      ResultSet rset = stmt.executeQuery(query);
-      rset.close();
-      stmt.close();
+        this.stmt = this.con.createStatement();
+        this.rset = this.stmt.executeQuery(query);
       }
       catch (Exception e)
       {
         e.printStackTrace();
       }
+      
+      return this.rset;
+  }
 
-      return rset;
+  public int execute_update (String query)
+  {
+
+      try{
+        this.stmt = this.con.createStatement();
+        this.affected_rows = this.stmt.executeUpdate(query);
+      }
+      catch (Exception e)
+      {
+        e.printStackTrace();
+      }
+      
+      return this.affected_rows;
   }
 }

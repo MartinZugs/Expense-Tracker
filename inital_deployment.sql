@@ -2,48 +2,61 @@ CREATE database expense_tracker;
 
 USE expense_tracker;
 
-CREATE TABLE User_Information (
+CREATE TABLE User (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(100),
-    last_name VARCHAR(100),
+    name VARCHAR(100),
     email VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE Accounts (
+CREATE TABLE Account (
     account_id INT AUTO_INCREMENT PRIMARY KEY,
-    account_name VARCHAR(100),
-    account_type VARCHAR(100),
+    name VARCHAR(100),
+    type VARCHAR(100),
+    balance DECIMAL (10, 2),
     user_id INT,
-    FOREIGN KEY (user_id) REFERENCES User_Information(user_id)
+    FOREIGN KEY (user_id) REFERENCES User(user_id)
 );
 
-CREATE TABLE Budgets (
+CREATE TABLE Budget (
     budget_id INT AUTO_INCREMENT PRIMARY KEY,
-    budget_title VARCHAR(100),
-    budget_amount DECIMAL (4, 2),
-    budget_category VARCHAR(100),
-    budget_start_date DATETIME,
-    budget_end_date DATETIME
+    name VARCHAR(100),
+    amount DECIMAL (10, 2),
+    category VARCHAR(100),
+    start_date DATETIME,
+    end_date DATETIME,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES User(user_id)
 );
 
-CREATE TABLE Transactions (
+CREATE TABLE Loan (
+    loan_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    amount DECIMAL (10, 2),
+    paid_off DECIMAL (10, 2),
+    creation_date DATETIME,
+    interest_rate DECIMAL (10, 2),
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES User(user_id)
+);
+
+
+CREATE TABLE Transaction (
     transaction_id INT AUTO_INCREMENT PRIMARY KEY,
-    transaction_value DECIMAL (4, 2),
-    transaction_category VARCHAR(100),
-    transaction_date DATETIME,
-    is_bill TINYINT(1),
+    value DECIMAL (10, 2),
+    category VARCHAR(100),
+    date DATETIME,
+    isBill TINYINT(1),
     account_id INT,
-    budget_id INT,
-    FOREIGN KEY (account_id) REFERENCES Accounts(account_id),
-    FOREIGN KEY (budget_id) REFERENCES Budgets(budget_id)
+    FOREIGN KEY (account_id) REFERENCES Account(account_id)
 );
 
-CREATE TABLE Bills (
+CREATE TABLE Bill (
     bill_id INT AUTO_INCREMENT PRIMARY KEY,
-    bill_value DECIMAL (4, 2),
-    bill_due_date DATETIME,
+    amount DECIMAL (10, 2),
+    due_date DATETIME,
+    name VARCHAR(100),
     transaction_id INT,
-    FOREIGN KEY (transaction_id) REFERENCES Transactions(transaction_id)
+    FOREIGN KEY (transaction_id) REFERENCES Transaction(transaction_id)
 );
 
 -- TO CREATE A NEW USER
