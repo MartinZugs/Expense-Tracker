@@ -2,7 +2,6 @@ package web.user;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.sql.*;
 
 import web.account.Account;
 import web.account.AccountService;

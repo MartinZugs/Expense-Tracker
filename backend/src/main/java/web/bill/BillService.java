@@ -2,7 +2,6 @@ package web.bill;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.sql.*;
 import web.database.*;
 
 public class BillService implements BillServiceInterface{

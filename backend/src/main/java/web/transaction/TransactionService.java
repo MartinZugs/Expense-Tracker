@@ -6,7 +6,6 @@ import web.user.UserService;
 import java.util.LinkedList;
 import java.util.List;
 
-import java.sql.*;
 import web.database.*;
 
 public class TransactionService implements TransactionServiceInterface {
